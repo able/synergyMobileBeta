@@ -1,0 +1,34 @@
+  <div class="field" data-role="fieldcontain">
+  Name: <br />
+    <%= text_field :name, "", {:id => 'name'} %>
+  
+  </div>
+  <div class="field" data-role="fieldcontain">
+  LivePulseID: [optional]<br />
+    <%= text_field :livePulseID, "", {:id => 'livePulseID'} %>
+  
+  </div>
+  <div class="field" data-role="fieldcontain">
+    Description:
+    <br />
+    <%= text_area :desc, "", {:id => 'description'} %>
+    
+  </div>
+  <div data-role="fieldcontain">
+    <fieldset data-role="controlgroup">
+    	<legend>Choose ownership:</legend>
+         	<input type="radio" name="radio-choice-1" id="radio-choice-1" value="public" checked="checked" />
+         	<label for="radio-choice-1">Public</label>
+
+         	<input type="radio" name="radio-choice-1" id="radio-choice-2" value="private"  />
+         	<label for="radio-choice-2">Mine</label>
+
+    </fieldset>
+</div>
+ 
+  <div class="field" data-role="fieldcontain">
+<%= link_to "#", {"data-role"=>"button","data-theme"=>"e","class"=>"ui-btn ui-btn-corner-all ui-shadow ui-btn-down-e ui-btn-up-e", "id"=>"submit"} do %>
+			<span class='ui-btn-inner ui-btn-corner-all'><span class='ui-btn-text'>Create</span></span>
+			<% end %> 
+  </div>
+

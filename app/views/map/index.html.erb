@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>Synergy</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <%= javascript_include_tag :defaults %>
+	  <%= javascript_include_tag "d3.js" %>
+	  <%= javascript_include_tag 'jquery.mobile-1.0b2.js' %>
+	  <%= javascript_include_tag "custom_scripting.js" %>
+	  <%= csrf_meta_tag %>
+          <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css">
+        <style type="text/css">
+            .label {
+              font: 8px "lucida grande";
+              font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+              stroke: white;
+            }
+/*
+	    .map #map {
+	       margin-left: 700px;
+	       margin-right: auto;
+               width:750px;
+	    }
+*/
+            .rule .text .node-text .tooltip{
+              font: 10px sans-serif;
+            }
+        </style>
+    </head>
+    <div data-role="page" id="mainpage">
+        <div data-role="header">
+            <h1>Live Locations</h1>
+            <%= link_to 'Home', home_menu_path, {"class" => "ui-btn-left", "data-icon"=>"home"} %>
+        </div>
+        <div data-role="content" class="map">
+	    <div id="map" class="map"> </div> </div>
+	<script type="text/javascript">
+	    $('#mainpage').live('pagecreate',function(event){
+                d3.json('/map/coordinates', function (json) {
+		  var data = json; // starting dataset
+		  var getKeys = function(obj){
+		     var keys = [];
+		     for(var key in obj){
+		        keys.push(key);
+		     }
+		     return keys;
+	   	  }
+
+		// save as reference for printing out contents of hash objects
+		// alert(getKeys(data));  
+		// alert(getKeys(data[0]));
+		// alert(data[0].value);
+		// alert(data[0].time);
+
+                var padding = 40;
+                var w = ((window.innerWidth > 0) ? window.innerWidth : screen.width);
+		var cub = 18.0;
+
+		var h = 200;
+		var vis = d3.select("#map")
+		.append("svg:svg")
+		.attr("width", w)
+		.attr("height", screen.height);
+	    
+		var gradient = vis.append("svg:defs")
+		  .append("svg:linearGradient")
+		    .attr("id", "gradient")
+		    .attr("x1", "0%")
+		    .attr("y1", "0%")
+		    .attr("x2", "100%")
+		    .attr("y2", "100%")
+		    .attr("spreadMethod", "pad");
+
+		gradient.append("svg:stop")
+		    .attr("offset", "0%")
+		    .attr("stop-color", "#9dcafc")
+		    .attr("stop-opacity", 1);
+
+		gradient.append("svg:stop")
+		    .attr("offset", "100%")
+		    .attr("stop-color", "#1a82f7")
+		    .attr("stop-opacity", 1);
+
+		var gradient2 = vis.append("svg:defs")
+		  .append("svg:linearGradient")
+		    .attr("id", "gradient2")
+		    .attr("x1", "0%")
+		    .attr("y1", "0%")
+		    .attr("x2", "100%")
+		    .attr("y2", "100%")
+		    .attr("spreadMethod", "pad");
+
+		gradient2.append("svg:stop")
+		    .attr("offset", "0%")
+		    .attr("stop-color", "#9287fb")
+		    .attr("stop-opacity", 1);
+
+		gradient2.append("svg:stop")
+		    .attr("offset", "100%")
+		    .attr("stop-color", "#1a0da1")
+		    .attr("stop-opacity", 1);
+
+		var gradient3 = vis.append("svg:defs")
+		  .append("svg:linearGradient")
+		    .attr("id", "gradient3")
+		    .attr("x1", "0%")
+		    .attr("y1", "0%")
+		    .attr("x2", "100%")
+		    .attr("y2", "100%")
+		    .attr("spreadMethod", "pad");
+
+		gradient3.append("svg:stop")
+		    .attr("offset", "0%")
+		    .attr("stop-color", "#44fbc4")
+		    .attr("stop-opacity", 1);
+
+		gradient3.append("svg:stop")
+		    .attr("offset", "100%")
+		    .attr("stop-color", "#02a171")
+		    .attr("stop-opacity", 1);
+
+		var gradient4 = vis.append("svg:defs")
+		  .append("svg:linearGradient")
+		    .attr("id", "gradient4")
+		    .attr("x1", "0%")
+		    .attr("y1", "0%")
+		    .attr("x2", "100%")
+		    .attr("y2", "100%")
+		    .attr("spreadMethod", "pad");
+
+		gradient4.append("svg:stop")
+		    .attr("offset", "0%")
+		    .attr("stop-color", "#000000")
+		    .attr("stop-opacity", 1);
+
+		gradient4.append("svg:stop")
+		    .attr("offset", "100%")
+		    .attr("stop-color", "#4C4C4C")
+		    .attr("stop-opacity", 1);
+
+		var gradient5 = vis.append("svg:defs")
+		  .append("svg:linearGradient")
+		    .attr("id", "gradient5")
+		    .attr("x1", "100%")
+		    .attr("y1", "0%")
+		    .attr("x2", "100%")
+		    .attr("y2", "100%")
+		    .attr("spreadMethod", "pad");
+
+		gradient5.append("svg:stop")
+		    .attr("offset", "0%")
+		    .attr("stop-color", "#FFFFFF")
+		    .attr("stop-opacity", 1);
+
+		gradient5.append("svg:stop")
+		    .attr("offset", "100%")
+		    .attr("stop-color", "#808080")
+		    .attr("stop-opacity", 1);
+
+		function mouseoverOffices(uri) {
+		    return function(d, i) {
+			d3.selectAll(".node-text")
+			  .remove();
+			var length = uri.length;
+			var x = parseFloat(d3.select(this).attr("x")) + 10;
+			var y = parseFloat(d3.select(this).attr("y")) - 15;
+			var node = vis.append("svg:g")
+			   .attr("class", "node-text");
+			node.append("svg:rect")
+			   .attr("class", "node-text")
+			   .attr("x", x )
+			   .attr("y", y) 
+			   .attr("width", length * 5.35)
+			   .attr("height", cub);
+		       
+			node.append("svg:text")
+			   .attr("text-anchor", "middle")
+			   .attr("class", "node-text")
+			   .attr("dx", "4.9em")
+			   .attr("dy", "1.2em")
+			   .attr("x", x + 50 )
+			   .attr("y", y )
+			   .style("fill", "white")
+			   .style("font-size","10px")
+			   .text(function(d,i) { return uri; });
+		      
+			d3.select(this)
+			  .style("fill", "gray") 
+			  .transition()
+			  .style("fill", "url(#gradient4)");
+		    };
+		}
+
+		function mouseoutOffices(grad) {
+		    return function(d, i) {
+			d3.selectAll(".node-text")
+			  .remove();
+			d3.select(this) 
+			   .transition()
+			   .delay(0.00001)
+			   .duration(0.00001)
+			   .ease("quad")
+			   //.ease("elastic", 10000, .45)
+			   .style("fill", grad);
+		    };
+		}
+
+		function clickOffices(link) {
+		    return function(d, i) {
+			window.location = link;
+		    };
+		}
+
+		function cubicles(x, y, uri, v,  x_size, y_size, grad) {
+		    v.append("svg:rect")
+		    .attr("x",  x * cub)
+		    .attr("y",  y * cub)
+		    .attr("width", cub * y_size)
+		    .attr("height", cub * x_size)
+		    .style("fill", "gray") 
+		    .style("fill", grad)
+		    .attr("class", "rect")
+		    .on("click", clickOffices('/liveSynergy' + uri))
+		    .on("mouseover", mouseoverOffices('/liveSynergy' + uri))
+		    .on("mouseout", mouseoutOffices(grad));
+		}	
+
+		function rectangle(x, y, v, height, width) {
+		    v.append("svg:rect")
+		    .attr("x", x * cub)
+		    .attr("y", y * cub)
+		    .attr("width", width * cub)
+		    .attr("height", height * cub)
+		    .style("fill", "url(#gradient3)")
+		    .attr("class", "rect")
+		    .on("mouseover", mouseoverOffices());
+		}
+
+		vis.append("svg:rect")
+		.attr("x", "0")
+		.attr("y", "0")
+		.attr("width", "400")
+		.attr("height", "600")
+		.attr("class", "rect")
+		.style("fill", "#CEC4BE");
+
+		var cub_x = 5;
+
+		var cubs = json.spaces;
+		var gradient_map = {
+		  "open-area" : "url(#gradient3)",
+		  "phone-room": "url(#gradient3)",
+		  "mail-room": "url(#gradient3)",
+		  "office": "url(#gradient2)",
+		  "focus-room": "url(#gradient3)",
+		  "conference-room": "url(#gradient3)",
+		  "kitchen": "url(#gradient2)",
+		  "cubicle": "url(#gradient)"
+		};
+
+		for ( var z = 0; z < cubs.length; z++ ){
+		  var cubicle = cubs[z];
+		  var x = parseFloat(cubicle.coordinates.x);
+		  var y = parseFloat(cubicle.coordinates.y);
+		  var name = cubicle.name;
+		  var uri = cubicle.uri;
+		  var subtype = cubicle.subtype;
+		  var dims = cubicle.dimensions.split(",");
+		  var x_size = parseFloat(dims[0]);
+		  var y_size = parseFloat(dims[1]);
+		  cubicles(x,y,uri,vis,x_size,y_size,gradient_map[subtype]);
+		}
+		var x = d3.scale.linear().domain([0,1])
+		// .range([screen.width / 2 - 400,screen.width / 2 + 400]),
+		.range([20, 150]),
+		y = d3.scale.linear().domain([0,1]).range([10,h]),
+		r = d3.scale.linear().domain([0,1]).range([5,10]),
+		c = d3.scale.linear().domain([0,1])
+		.range(["hsl(250, 50%, 50%)", "hsl(350, 100%, 50%)"])
+		.interpolate(d3.interpolateHsl);
+		
+
+
+		node = vis.selectAll("g.node")
+		        .data(data.users)
+		        .enter().append("svg:g").attr("class", "node");
+
+		node.append("svg:circle")
+		    .attr("cx", function(d) { return parseFloat(d.coordinates.x) * cub })
+		    .attr("cy", function(d) { return parseFloat(d.coordinates.y) * cub })
+		    .attr("stroke-width", "none")
+		    .attr("fill", function() { return c(Math.random()) })
+		    .attr("fill-opacity", .5)
+		    .attr("r", function() { return r(Math.random()) }).append("svg:title");
+
+		node.append("svg:text")
+		    .attr("class", "text")
+		    .attr("text-anchor", "middle")
+		    .attr("x", function(d) { return parseFloat(d.coordinates.x) * cub })
+		    .attr("y", function(d) { return parseFloat(d.coordinates.y) * cub })
+		    .text(function(d,i) { return d.name; });
+		
+		var y2 = d3.scale.linear().domain([0,1]).range([h/2 - 20, h/2 + 20]);
+		var del = d3.scale.linear().domain([0,1]).range([0,1]);
+
+		  function next() {
+		      var json_data;
+                      d3.json('/users/coordinates', function (json) {
+	   		  json_data = json;
+		      });
+		      return json_data;
+	 	  }
+	 		
+		setInterval(function() {
+		  redraw();
+		}, 60000);
+
+		function redraw() {
+                    d3.json('/friends/coordinates', function (json) {
+                      var users = json.users;	
+		      d3.selectAll("g.node").transition()
+		        .attr("transform", function(d) { 
+		  	    return "translate(" + ((parseFloat(users[d.name].coordinates.x) - parseFloat(d.coordinates.x)) * cub) 
+				 + "," + ((parseFloat(users[d.name].coordinates.y) - parseFloat(d.coordinates.y)) * cub) + ")"; 
+			})
+		        .attr("visibility", "visible")
+		        .delay(function(d,i) { return i * del(Math.random()) })
+		        .duration(15000);
+		    });
+		}
+	});
+	});  
+        </script>
+    </div>
+</html>
+
+

@@ -1,0 +1,53 @@
+<div data-role="page">
+
+<div data-role="header">
+  <h1>Trigger</h1>
+<%= link_to 'Back', '#', {"class" => "ui-btn-left", "data-rel"=>"back", "data-icon"=>"arrow-l"} %>
+</div>
+<div data-role="content">
+     <table>
+    <tbody>
+      <tr>
+        <th scope="col">Name:</th>
+        <td><%=@trigger.name%></td>
+      </tr>
+      <tr>
+        <th scope="col">Triggering Entity:</th>
+        <td><%=@trigger.triggering_entity%></td>
+      </tr>
+      <tr>
+        <th scope="col">Triggering:</th>
+        <td><%=@trigger.triggering['name']%></td>
+      </tr>
+      <tr>
+        <th scope="col">Triggering Type:</th>
+        <td><%=@trigger.triggering['type']%></td>
+      </tr>
+
+      <tr>
+        <th scope="col">Triggering Args:</th>
+        <td><%=@trigger.triggering['args']%></td>
+      </tr>
+      <tr>
+        <th scope="col">Triggered Entity:</th>
+        <td><%=@trigger.triggered_entity%></td>
+      </tr>
+      <tr>
+        <th scope="col">Triggered:</th>
+        <td><%=@trigger.triggered['name']%></td>
+      </tr>
+      <tr>
+        <th scope="col">Triggered Type:</th>
+        <td><%=@trigger.triggered['type']%></td>
+      </tr>
+      <tr>
+        <th scope="col">Triggered Args:</th>
+        <td><%=@trigger.triggered['args']%></td>
+      </tr>
+
+    </tbody>
+    </table>
+</ul>
+</div>
+
+</div>

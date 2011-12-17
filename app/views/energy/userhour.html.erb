@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Synergy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "d3.js" %>
+  <%= javascript_include_tag 'jquery.mobile-1.0b2.js' %>
+  <%= javascript_include_tag "custom_scripting.js" %>
+  <%= csrf_meta_tag %>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css">
+  <style type="text/css">
+/*
+.chart2 div {
+   font: 10px sans-serif;
+   background-color: steelblue;
+   text-align: right;
+   padding: 3px;
+   margin: 1px;
+   color: white;
+ }
+*/
+#chart {
+   margin-left:auto;
+   margin-right:auto;
+
+}
+
+#chart2 {
+  stroke: white;
+  fill-opacity: 0;
+  border: solid 3px #234057;
+  -moz-border-radius-topleft: 19px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-bottomright: 29px;
+  -webkit-border-top-left-radius: 19px;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-bottom-right-radius: 29px;
+  border-top-left-radius: 19px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 29px;
+  width: 450px;
+  background-color: gray;
+  background: -moz-linear-gradient(10% 20% 90deg, silver, dimgray 100%);
+}
+
+.label {
+  font: 8px "lucida grande";
+  font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+  stroke: white;
+}
+
+.rule {
+  font: 10px sans-serif;
+}
+
+.line {
+  /* stroke: #c00; */
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+.point {
+fill: rgb(200,0,0);
+stroke-width: 2px;
+stroke: rgb(255,255,255);
+}
+
+.point .max {
+fill: rgb(51, 156, 255);
+stroke-width: 2px;
+}
+div#chart text {
+  fill: gray;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+}
+  </style>
+
+  </head>
+  <div data-role="page" id="mainpage">
+    <div data-role="header">
+      <h1>Energy</h1>
+      <%= link_to 'Back', '#', {"class" => "ui-btn-left", "data-rel"=>"back", "data-icon"=>"arrow-l"} %>
+    </div>
+    <div data-role="content">
+    <div id="chart" ></div>
+
+    <br/>
+    <script type="text/javascript">
+      $('#mainpage').live('pagecreate',function(event){
+	function isNumber(n) {
+	  return !isNaN(parseFloat(n)) && isFinite(n);
+	}
+/*
+        var colourMap = {
+            0 : 'steelblue',
+	    1 : '#A7DBD8', // AQUA GREEN
+	    2 : '#B9B6EF', // light purple
+	    3 : '#FECEBA', // light salmon
+	    4 : '#69D2E7', // OCEAN BLUE
+	    5 : '#FAB87F' // light orrange
+	};
+*/
+        var colourMap = {
+            0 : '#DC70CE', //sanity
+	    1 : '#37BD0B', // SILLY GREEN
+	    2 : '#9127B7', // PURPLE ROYALE
+	    3 : '#B02149', // COURTESAN RED 
+	    4 : '#1479C3', // HOGWARTS
+	    5 : 'orange', // light orrange
+	    6 : '#63D0C3' // aqua green 
+	};
+
+        var padding = 40;
+        var w = ((window.innerWidth > 0) ? window.innerWidth : screen.width) - padding;
+        var num_dots_horiz = Math.round(1 / w * 3000);
+        var num_x_ticks = Math.max(Math.round(w/100)); 
+        if (w < 370) {
+           num_x_ticks = 2;
+        } 
+        var num_y_ticks = 12;
+        var h = 700;	
+        var update = function () {
+          d3.json('/users/<%= params[:uri] %>' + '/energy/hour/data', function (json) {
+	    var legend = json.legend;
+            var data = json.data;
+            var average_power = d3.merge(data).map(function (d) { return (Math.round(d.average_power)); });
+            var time = d3.merge(data).map(function (d) { 
+var time = new Date(d.timestamp*1000);
+var hours = time.getHours()
+var mins = time.getMinutes()
+hours = (hours < 10 ? '0' + hours : hours);
+mins = (mins < 10 ? '0' + mins : mins);
+return new Date(Math.round(d.timestamp * 1000)); });
+	    var time_min = d3.min(time);
+	    var time_max = d3.max(time);
+            var y_max = d3.max(average_power);	
+            var y_min = d3.min(average_power);	
+
+	    var x_zero = padding*2;
+            var y_full = h - padding*7;
+	    var x_full = w - padding*3;
+            var y_zero = padding * 2;
+
+
+	    var x = d3.scale.linear()
+	              .domain([time_min, time_max ])
+	              .rangeRound([x_zero, x_full]);
+
+	    var y = d3.scale.linear()
+		      .domain([y_min * 0.6, y_max])
+	              .rangeRound([y_full, y_zero ]);	
+
+	    var vis = d3.select('#chart')
+     			.append('svg:svg')
+		        .attr('width', w)
+	       	        .attr('height', h);
+
+            vis.append("svg:rect").
+                  attr("x", 0).
+                  attr("y", 0).
+                  attr("height", h).
+                  attr("width", w).
+                  attr("fill", "#C5CBCA");
+
+
+            var axisGroup = vis;
+            var x_ticks = axisGroup.selectAll('.tick_x')
+                       .data(x.ticks(num_x_ticks))
+                       .enter().append('svg:g')
+                       .attr("transform", "translate("+padding+","+padding+")");
+
+	    x_ticks.append('svg:line')
+		 .attr('y1', y_zero)
+		 .attr('y2', y_full)
+		 .attr('x1', 0)
+		 .attr('x2', 0)
+	         .attr('transform', function(d) {
+		    return "translate(" + (x(d)) + ", 0)" })	
+	         .attr('class', 'tick_x')
+		 .attr("stroke", "white");
+
+            x_ticks.append("svg:text")
+		   .text(function(d, i) { 
+			var time = new Date(d*1000);
+			var hours = time.getHours()
+			var mins = time.getMinutes()
+			hours = (hours < 10 ? '0' + hours : hours);
+			mins = (mins < 10 ? '0' + mins : mins);
+			return hours+ ':' + mins; })
+		   .attr("x", 0)
+		   .attr("y", y_full)
+                   .attr("dy", 30)
+		   .attr("text-anchor", "middle")
+	           .attr('transform', function(d) {
+		    return "translate(" + (x(d)) + ", 0)" })	
+		   .attr("class", "xAxisBottom");
+
+            var y_ticks = axisGroup.selectAll('.tick_y')
+                       .data(y.ticks(num_y_ticks))
+                       .enter().append('svg:g')
+                       .attr("transform", "translate("+padding+","+padding+")");
+
+	    y_ticks.append('svg:line')
+		 .attr('y1', 0)
+		 .attr('y2', 0)
+		 .attr('x1', x_zero)
+		 .attr('x2', x_full)
+	         .attr('transform', function(d) {
+		    return "translate(0, " +  (y(d)) + ")" })	
+	         .attr('class', 'tick_y')
+		 .attr("stroke", "white");
+
+            y_ticks.append("svg:text")
+		   .text(function(d, i) { 
+			return d; })
+		   .attr("x", x_zero)
+		   .attr("y", 0)
+                   .attr("dx", -50)
+                   .attr("dy", 30)
+		   .attr("text-anchor", "middle")
+	           .attr('transform', function(d) {
+		    return "translate( 0, " + (y(d)) + ")" })	
+		   .attr("class", "yAxisBottom")
+		   .attr("visibility", function(d, i) {
+		    if (i % 2 == 0) {
+			return 'hidden';
+		    } else {
+                        return 'true';
+		    }
+	  	   } );
+           var lineGroup = axisGroup.append("svg:g").
+                  attr("transform", "translate("+padding+","+padding+")");
+
+            lineGroup.selectAll('path.line')
+	       .data(data)
+ 	       .enter().append("svg:path")
+ 	       // .attr('class', 'line')
+ 	       .style('stroke', function(d,i) { 
+		return colourMap[i] ;  } ) 
+               .style('stroke-width', '3px')
+               .style('fill', 'none')
+   	       .attr("d", 
+	           d3.svg.line().x(function(d,i){return x(new Date(Math.round(d.timestamp * 1000))) + 0.5;})
+				.y(function(d,i){return y(Math.round(d.average_power)) + 0.5;}		    ));
+	 /* 
+            lineGroup.selectAll('.point')
+               .data(d3.merge(data))
+  	       .enter().append("svg:circle")
+               .attr("visibility", function(d, i) {
+		    if (d.index % num_dots_horiz == 0) {
+			return 'true';
+		    } else {
+                        return 'hidden';
+		    }
+		}) 
+   	       .attr("class", function(d, i) { 
+		    if (Math.round(d.average_power) == y_max) {
+			return 'point max';
+		    } else {
+			return 'point';
+		    }
+		})
+              .attr("cx", function(d, i) { return x(new Date(Math.round(d.timestamp * 1000))); })
+   	      .attr("cy", function(d) { return y(Math.round(d.average_power)); })
+              .attr("r", function(d, i) { 
+		    if (d == y_max) {
+			return 6;
+		    } else {
+			return 4;
+		    }
+		})
+	       .on('mouseover', function(){ d3.select(this).attr('r', 8);})
+   	       .on('mouseout', function(){  d3.select(this).attr('r', 4);});
+*/
+
+	    // create boxes for legend
+            var legendBoxes = vis.append("svg:g").
+                  attr("transform", "translate("+padding+","+padding+")");
+
+            legendBoxes.selectAll('.boxes').data(legend)
+            .enter()
+	    .append("svg:rect")
+            .attr("x", w/2 - 200)
+            .attr("y", function(d,i){
+		return y_full + 70 +  20 * i;
+	//	return h - 100- 20 * i;
+             })
+            .attr("height", 20)
+            .attr("width", 20)
+            .attr("stroke", "white")
+            .attr("fill", function(d,i) { 
+		return colourMap[i];
+		});
+
+            
+            legendBoxes.selectAll('.boxes').data(legend)
+            .enter()
+	    .append("svg:text")
+	    .text(function(d, i) {
+		return d;
+		}) 
+	    .attr("x", w/2 - 200)
+            .attr("y", function(d,i){
+		return y_full + 70 +  20 * i;})
+	    .attr("dx", 30)
+	    .attr("dy", 17)
+	    .attr("text-anchor", "left");
+
+
+
+
+        })};
+        update(); 
+      });
+
+    </script>
+  </div>
+</div>
+</html>
+
+

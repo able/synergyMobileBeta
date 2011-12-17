@@ -1,0 +1,16 @@
+<div data-role="page" id="mainpage">
+
+<div data-role="header">
+  <h1>Add New Thing</h1>
+    <%= link_to 'Home', home_menu_path, {"class" => "ui-btn-left",  "data-icon"=>"home"} %>
+</div>
+
+<div data-role="content" data-theme='a'>
+<%= form_for(:entity) do |f| %>
+  <%= render 'shared/error_messages', :target => @entity %>
+  <%= render 'fields_thing', :f => f %>
+<% end %>
+
+</div>
+
+</div>

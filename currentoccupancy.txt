@@ -1,0 +1,26 @@
+Entity.where(:type => 'space').to_a.map do |ent|
+  events = ent.events.deep_copy
+  events << { "name" => "whenNumOccupancyReachesX", "args" => [ { "name" => "numOccupancy", "type" => "integer" } ] }
+  ent.events = events
+  ent.save!
+end
+
+prototype = Prototype.where(:name => 'space')[0]
+events = prototype.events.deep_copy
+events << { "name" => "whenNumOccupancyReachesX", "args" => [ { "name" => "numOccupancy", "type" => "integer" } ] }
+prototype.events = events
+prototype.save!
+
+
+
+from pymongo import Connection
+connection = Connection('localhost', 27017)
+db = connection['synergy_mobile_beta_development']
+path = '/msra/floors/12/kitchen-room'
+event_name = 'whenNumOccupancyReachesX'
+args = '1'
+triggers = db['triggers'].find({"triggering_entity": path,
+                 "triggering.name": event_name,
+                 "triggering.type": 'event',
+                 "triggering.args": args})
+

@@ -1,0 +1,46 @@
+<%= form_for(@trigger, :as => :trigger, :url => '/triggers/edit/' + @trigger['_id'].to_s) do |f| %>
+  <% if @trigger.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trigger.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @trigger.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :triggering_entity %><br />
+    <%= f.collection_select(:trigger, :triggering_entity, @entities, :id) %>
+  </div>
+  <div class="field">
+    <%= f.label :triggering %><br />
+    <%= f.text_field :triggering %>
+  </div>
+  <div class="field">
+    <%= f.label :triggered_entity %><br />
+    <%= f.text_field :triggered_entity %>
+  </div>
+  <div class="field">
+    <%= f.label :triggered %><br />
+    <%= f.text_field :triggered %>
+  </div>
+  <div class="field">
+    <%= f.label :owner %><br />
+    <%= f.text_field :owner %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

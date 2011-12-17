@@ -1,0 +1,56 @@
+<div data-role="page" id="mainpage">
+	
+	
+		<div data-role="header">
+			<h1>Energy</h1>
+			<%= link_to 'Back', '#', {"class" => "ui-btn-left", "data-rel"=>"back", "data-icon"=>"arrow-l"} %>
+		</div>
+		<div data-role="content" class='filter-list'>
+			<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="d">
+				<li data-role="list-divider"> My Things
+				</li>
+			<% current_user.things.each do |thing| %>
+				<% if thing.subtype != 'sms-gateway' %>
+	        	<li>
+	          		<%= link_to thing[:uri], thing[:uri] + '/energy/hour', {'data-ajax' => 'false'}%>
+	        	</li>
+				<% end %>
+	      	<% end %>
+			</ul>
+			<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="d">
+				<li data-role="list-divider"> My Spaces 
+				</li>
+			<% current_user.spaces.each do |space| %>
+	        	<li>
+	          		<%= link_to space[:uri], space[:uri] + '/energy/hour', {'data-ajax' => 'false'}%>
+	        	</li>
+	      	<% end %>
+			</ul>
+
+<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="d">
+                                <li data-role="list-divider"> My Friends 
+                                </li>
+                        <% current_user.friends.each do |friend| %>
+                        <li>
+                                <%= link_to friend[:uri], '/users' + friend[:uri] + '/energy/hour', {'data-ajax' => 'false'}%>
+                        </li>
+                <% end %>
+                        </ul>
+
+		</div>
+</div>
+
+<script type="text/javascript">
+	$('a.thing').click(function() {
+		window.location = '/energy/thing/4e188defcb645604d8000025';
+
+	});
+	$('#mainpage').live('pagecreate',function(event){
+	// $(document).ready(function() {
+		$('a.thing').click(function() {
+			window.location = '/energy/thing/4e188defcb645604d8000025';
+
+		});
+		
+	});
+</script>

@@ -1,0 +1,43 @@
+rails 3.0: install jquery rails generate jquery:install 
+
+mongoid install: 
+
+rails g mongoid:config
+
+Open myapp/config/application.rb and near the top, remove the line require 'rails/all' and add the following three lines so you end up with this:
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "active_resource/railtie"
+require "rails/test_unit/railtie"
+
+rails generate devise User
+rails generate devise:install
+
+
+http://www.saalonmuyo.com/2010/01/27/using-form_tag-in-ruby-on-rails/
+
+http://rails-bestpractices.com/posts/41-use-multipart-alternative-as-content_type-of-email
+
+3. fix sign out.
+
+
+http://stackoverflow.com/questions/5198211/dynamic-select-boxes-with-forms
+
+http://stackoverflow.com/questions/5982821/how-to-dynamically-populate-javascript-data-structure
+
+http://jquerymobiledictionary.dyndns.org/faq.html
+
+http://stackoverflow.com/questions/5406837/dynamic-select-using-rails-3-and-jquery
+
+http://pullmonkey.com/2008/03/30/dynamic-select-boxes-ruby-on-rails/
+
+http://asciicasts.com/episodes/43-ajax-with-rjs
+
+http://stackoverflow.com/questions/5917691/dynamic-form-fields-in-rails3-with-jquery
+
+http://stackoverflow.com/questions/5982821/how-to-dynamically-populate-javascript-data-structure
+
+======
+
+git reset --hard HEAD
+

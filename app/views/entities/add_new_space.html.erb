@@ -1,0 +1,23 @@
+<div data-role="page" id="mainpage">
+
+	<div data-role="header">
+	  <h1>New Space</h1>
+          <%= link_to 'Home', home_menu_path, {"class" => "ui-btn-left",  "data-icon"=>"home"} %>
+
+	</div>
+
+	<div data-role="content">
+
+
+<%= form_for(:entity) do |f| %>
+  <%= render 'shared/error_messages', :target => @entity %>
+  <%= render 'fields_space', :f => f %>
+  <div class="actions">
+    <%= f.submit "Create"%>
+  </div>
+<% end %>
+
+
+</div>
+
+</div>

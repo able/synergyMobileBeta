@@ -1,0 +1,54 @@
+
+<div data-role="page">
+
+<div data-role="header">
+  <h1>Thing - Attributes</h1>
+<%= link_to 'Back', '#', {"class" => "ui-btn-left", "data-rel"=>"back", "data-icon"=>"arrow-l"} %>
+  <%= link_to 'Add', entities_add_new_thing_path, "data-role" => "button", "data-icon" => "plus", "class" => "ui-btn-right", "id" => "add-button" %>
+  <!-- # add javascript here to pull up dialog.... -->
+</div>
+<div data-role="content">
+	<table summary="This table lists all the JetBlue flights.">
+	  <!-- <caption>Travel Itinerary</caption> -->
+	  <!-- <thead>
+	    <tr>
+	       <th scope="col">Flight:</th>  
+	      <th scope="col">From:</th>  
+	      <th scope="col">To:</th>  
+	    </tr>
+	  </thead> -->
+	<tbody>
+	  <tr>
+	    <th scope="col">Name:</th>
+	    <td><%=@entity.name%></td>
+	  </tr>
+	  <tr>
+	    <th scope="col">livePulseID:</th>
+	    <td><%=@entity.livePulseID%></td>
+	  </tr>
+	  <tr>
+	    <th scope="col">Type:</th>
+	    <td><%=@entity.type%></td>
+	  </tr>
+	  <tr>
+	    <th scope="col">Methods:</th>
+	    <td><%=@entity.methods%></td>
+	  </tr>
+	  <tr>
+	    <th scope="col">Events:</th>
+	    <td><%=@entity.events%></td>
+	  </tr>
+	</tbody>
+	  <!-- <tfoot>
+	    <tr>
+	      <td colspan="5">Total: 3 flights</td>
+	    </tr>
+	  </tfoot> -->
+	</table>
+</ul>
+</div>
+
+</div>
+<p id="notice"><%= notice %></p>
+
+

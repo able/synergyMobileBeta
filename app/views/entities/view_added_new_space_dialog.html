@@ -1,0 +1,12 @@
+<div data-role="page" id="mainpage" class="ui-page ui-body-c ui-page-active" style="min-height: 562px; ">
+    <div data-role="header" data-theme="d" data-position="inline" class="ui-header ui-bar-d" role="banner">
+    <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">Added</h1>
+		</div>
+
+		<div data-role="content" data-theme="c" class="ui-content ui-body-c" role="main">
+			<h1>Space Added to your Collection!</h1>
+			<%= link_to spaces_all_path, {'data-role' => "button", 'data-theme' => "b", 'class' => "ui-btn ui-btn-corner-all ui-shadow ui-btn-up-b"} do %><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">See My Space Collection</span></span><% end %> 
+			<%= link_to home_menu_path, {'data-role'=>'button', 'data-theme'=>"c", 'class' => "ui-btn ui-btn-corner-all ui-shadow ui-btn-up-c"} do %> <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Go to Home Menu</span></span><%end%>    
+
+		</div>
+	</div>

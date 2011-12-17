@@ -1,0 +1,38 @@
+  <div class="field" data-role="fieldcontain">
+  Name: <br />
+    <%= f.text_field :name %>
+  
+  </div>
+  <div class="field" data-role="fieldcontain">
+  LivePulseID: [optional]<br />
+    <%= f.text_field :livePulseID %>
+  
+  </div>
+  <div class="field" data-role="fieldcontain">
+   What space is this entity in?
+   </br>
+    <%= f.collection_select :uri, Entity.all_spaces, :downcase, :titleize %>
+   
+  </div>
+  <div class="field" data-role="fieldcontain">
+    Description:
+    <br />
+    <%= f.text_area :desc %>
+    
+  </div>
+  <div class="field" data-role="fieldcontain">
+    Ownership</br>
+    <%= f.collection_select :ownership, Entity.ownershipTypes, :downcase, :titleize %>
+    
+  </div>
+  <div class="field" data-role="fieldcontain">
+    Subtype<br />
+    <%= f.collection_select :subtype, Entity.all_thing_types, :downcase, :titleize %>
+  </div>
+   
+  <div class="field" data-role="fieldcontain">
+  <div class="actions"> 
+    <%= f.submit "Create", { 'data-theme' => 'e'}%> 
+  </div>
+  </div>
+

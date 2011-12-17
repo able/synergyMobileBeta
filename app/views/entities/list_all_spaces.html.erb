@@ -1,0 +1,37 @@
+<div data-role="page" id="mainpage">
+
+<div data-role="header">
+  <h1>My Spaces</h1>
+  <%= link_to 'Home', home_menu_path, {"class" => "ui-btn-left", "data-icon"=>"home"} %>
+  <%= link_to 'Add', add_space_path, {"class" => "ui-btn-right", "data-icon" => "plus"} %>
+        <div data-role="navbar">
+                <ul>
+<li><a href="/spaces/all" class="ui-btn-active">All</a></li>
+
+                        <li><a href="/spaces/public">Public</a></li>
+                        <li><a href="/spaces/private">Private</a></li>
+                </ul>
+        </div><!-- /navbar -->
+
+</div>
+<div data-role="content" class="ui-content" role="main">
+<% if not @hash.empty? %>
+<div class='filter-list'>
+<ul data-role="listview" data-filter="true" class="ui-listview" id="list">
+<% @hash.keys.each do |subtype| %>
+	<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-a"><%= subtype %> </li>
+  	<% @hash[subtype].each do |space| %>
+	<li>
+          <%= link_to space, "/liveSynergy" + space, {:id => '#', :class => 'ui-link-inherit', 'data-theme' => 'e'}%>
+          <%= link_to 'Delete', "/delete" + space, "data-icon" => "minus", 'data-theme' => 'e'%>
+	<% end %>
+	<% end %>
+</ul>
+</div>
+<% else %>
+<h2>  Please add a space to your collection! </h2>
+<% end %>
+</div>
+
+</div>
+

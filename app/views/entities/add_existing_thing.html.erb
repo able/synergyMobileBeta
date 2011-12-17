@@ -1,0 +1,32 @@
+<div data-role="page" id="mainpage">
+
+<div data-role="header">
+  <h1>Add Existing Thing</h1>
+  <%= link_to 'Home', home_menu_path, {"class" => "ui-btn-left", "data-icon"=>"home"} %>
+  <%= link_to 'Add New', entities_add_new_thing_path, {"class" => "ui-btn-right", "data-icon" => "plus"} %>
+</div>
+
+	
+
+
+<div data-role="content" class="ui-content" role="main">
+<!-- When choice is chosen, add to user's list of items of interest. -->
+<ul data-role="listview" data-filter="true" class="ui-listview filter-list" id="list">
+
+<% @hash.keys.each do |subtype| %>
+	<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-a"><%= subtype %> </li>
+  	<% @hash[subtype].each do |thing| %>
+	<li>
+          <%= link_to thing, "/liveSynergy" + thing, {:id => '#', :class => 'ui-link-inherit', 'data-theme' => 'e'}%>
+	  <% if current_user.things.include?(Entity.where(:uri => thing)[0]) %>
+          <%= link_to 'Show', "/delete" + thing, "data-icon" => "minus", "data-theme" => 'e' %>
+	  <% else %>
+          <%= link_to 'Show', "/add" + thing, "data-icon" => "add", "data-theme"=> 'e' %>
+          <% end %>
+	<% end %>
+<% end %>
+</ul>
+</div>
+
+</div>
+

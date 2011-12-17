@@ -1,0 +1,64 @@
+{ 
+    "name": "kitchen", 
+    "type": "space",
+    "subtype": "kitchen",
+    "coordinates": "1,10,12",
+    "dimensions": "4,4",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "mail-room", 
+    "type": "space",
+    "subtype": "mail-room",
+    "coordinates": "5,10,12",
+    "dimensions": "4,2",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12478", 
+    "type": "space",
+    "subtype": "conference-room",
+    "coordinates": "7,10,12",
+    "dimensions": "4,2.5",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12479", 
+    "type": "space",
+    "subtype": "conference-room",
+    "coordinates": "9.5,10,12",
+    "dimensions": "4,2.5",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12480", 
+    "type": "space",
+    "subtype": "conference-room",
+    "coordinates": "12,10,12",
+    "dimensions": "4,2.5",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12460", 
+    "type": "space",
+    "subtype": "focus-room",
+    "coordinates": "14.5,10,12",
+    "dimensions": "4,2.5",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12459", 
+    "type": "space",
+    "subtype": "focus-room",
+    "coordinates": "14.5,12,12",
+    "dimensions": "4,2",
+    "livePulseID": "",
+    "ownership": "public"
+},
+

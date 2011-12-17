@@ -1,0 +1,22 @@
+<div data-role="page" id="mainpage">
+
+        <div data-role="header">
+          <h1>Add LivePulse</h1>
+          <%= link_to 'Back', '#', {"class" => "ui-btn-left", "data-ajax" => "false", "data-rel"=>"back", "data-icon"=>"arrow-l"} %>
+        </div>
+
+        <div data-role="content">
+
+
+<%= form_for(:entity) do |f| %>
+  <div class="field" data-role="fieldcontain">
+  LivePulseID: <br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add LivePulse ID!", {'data-ajax' => false} %>
+  </div>
+<% end %>
+</div>
+</div>

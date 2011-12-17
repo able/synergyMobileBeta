@@ -1,0 +1,43 @@
+<div data-role="page" id="mainpage">
+
+<div data-role="header">
+  <h1>Add Friend</h1>
+  <%= link_to 'Home', home_menu_path, {"class" => "ui-btn-left", "data-icon"=>"home"} %>
+</div>
+
+
+<div data-role="content" class="ui-content" role="main">
+<!-- When choice is chosen, add to user's list of items of interest. -->
+<% if not @hash.empty? %>
+<div class="filter-list">
+<ul data-role="listview" data-filter="true" class="ui-listview" id="list">
+<% @hash.keys.each do |group| %>
+	<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-a"><%= group %> </li>
+  	<% @hash[group].each do |user| %>
+	<li>
+          <%= link_to user[:name], "/userview" + user[:uri], {:id => '#', :class => 'ui-link-inherit'}%>
+          <% if current_user.friends.include?(User.where(:uri => user[:uri])[0]) %>
+          <%= link_to 'Show', "/friends/delete" + user[:uri], "data-theme"=>'e',"data-icon" => "minus" %>
+          <% else %>
+          <%= link_to 'Show', "/friends/add" + user[:uri],"data-theme"=>'e', "data-icon" => "add" %>
+          <% end %>
+
+	<% end %>
+<% end %>
+</ul>
+</div>
+
+<% else %>
+<h2> No other users. </h2>
+<% end %>
+
+
+
+
+
+
+</ul>
+</div>
+
+</div>
+

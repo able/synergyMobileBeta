@@ -1,0 +1,70 @@
+<div data-role="page" id="mainpage">
+		<div data-role="header" data-theme='a'>
+			<h1>
+				Welcome <%= current_user.name %>
+			</h1><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, :class => "ui-btn-right" %>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" data-inset="true" data-theme="d" data-dividertheme="d">
+				<li data-role="list-divider">Browse My Collection
+				</li>
+				<li>                                      
+					<%= link_to 'My Spaces',  spaces_all_path%>
+					<span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= current_user.spaces.length %> </span>	
+				</li>
+				<li>
+					<%= link_to 'My Things',  things_all_path%>
+					<span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= current_user.things.length %> </span>	
+				</li>                                     
+	
+				<li>                                      
+					<%= link_to 'My Triggers',  triggers_all_path%>
+					<span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= current_user.triggers.length %> </span>	
+				</li>
+				<li>                                      
+					<%= link_to 'My Friends',  friends_path, {'data-ajax' => 'false'}%>
+					<span class="ui-li-count ui-btn-up-c ui-btn-corner-all"><%= (current_user.friends.length - 1)%> </span>	
+				</li>
+			</ul>
+			<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="d">
+				<li data-role="list-divider">Add
+				</li>
+				<li>                                      
+					<%= link_to 'Space', add_space_path%>
+				</li>                                     
+				<li>
+					<%= link_to 'Thing', add_thing_path%>
+				</li> 
+
+
+
+				<li>                                      
+					<%= link_to 'Trigger', triggers_add_path, {'data-ajax' => 'false'}%>
+				</li>
+				<li>                                      
+					<%= link_to 'Friend', add_friend_path%>
+				</li>
+			<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="d">
+				<li data-role="list-divider">Visualizations
+				</li>
+				<li>
+
+					<%= link_to 'Energy [Beta]', entities_energy_things_spaces_friends_menu_path %>
+				</li>
+				<li>
+					<%= link_to 'Live Location [Beta]', map_path  %>
+				</li>
+			</ul>			
+				<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="d">
+
+				<li data-role="list-divider">Preferences
+				</li>
+				<li>
+
+					<%= link_to 'Change My Settings', edit_user_registration_path %>
+				</li>
+			</ul>
+
+		</div>
+</div>
+

@@ -1,0 +1,161 @@
+rest/users/sign_up
+
+{"user"=>{"name"=>"Jeff Hsu", "liveLinkID"=>"12AB", "username"=>"jeffhsu", "group"=>"/msra/mass", "email"=>"jeffhsu@microsoft.com", "phone_number"=>"13021079038", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+
+
+
+
+
+{"utf8"=>"✓", "authenticity_token"=>"7mJ29aMHwiW+8TXhgX6cZUp2jSmI4UtSlzN0EHI7c5U=", "trigger"=>{"title"=>"1", "triggering_entity"=>"/msra/sms-gateway", "triggering"=>"send", "args1"=>"/msra/mass/jeffhsu", "sendtext1"=>"1", "triggered_entity"=>"/msra/floors/12/rooms/12304/msra-light-1235", "triggered"=>"turnOn", "description"=>"1"}, "commit"=>"Create Trigger!"}
+
+
+
+get information about thing or space:
+
+GET on /rest/liveSynergy/:uri.json
+ex: /rest/liveSynergy/msra/floors/12/kitchen-room/kitchen-msra-light-1195
+
+{
+"uri": "/msra/floors/12/kitchen-room/kitchen-msra-light-1195",
+"events": [
+],
+"methods": [
+{
+"args": [
+],
+"name": "turnOn"
+},
+{
+"args": [
+],
+"name": "turnOff"
+}
+],
+"name": "kitchen-msra-light-1195",
+"ownership": "public",
+"type": "thing",
+"subtype": "floor-light"
+}
+
+get all public things:
+
+GET on  /rest/things/public/all.json
+
+ex: 
+
+{
+"apple-laptop": [
+"/msra/floors/12/rooms/12310/ballmer-macbook-pro-3456"
+],
+"coffee-machine": [
+"/msra/floors/12/rooms/12310/coffee-machine-1423"
+],
+"desk-lamp": [
+"/msra/floors/12/rooms/12304/msra-light-1235"
+],
+"desk-phone": [
+"/msra/floors/12/rooms/12310/msra-phone-6234"
+],
+"floor-light": [
+"/msra/floors/12/rooms/12310/msra-light-1234",
+"/msra/floors/12/kitchen-room/kitchen-msra-light-1195"
+],
+"hp-desktop-pc": [
+"/msra/floors/12/rooms/12310/ballmer-hp-desktop-2345"
+],
+"lenovo-laptop": [
+"/msra/floors/12/rooms/12304/lenovo-x61-1234"
+],
+"projector": [
+"/msra/floors/12/rooms/12310/msra-projector-6234"
+],
+"refrigerator": [
+"/msra/floors/12/rooms/12310/msra-refrigerator-4352",
+"/msra/floors/12/kitchen-room/kitchen-refrigerator"
+],
+"sms-gateway": [
+"/msra/sms-gateway"
+],
+"sony-projector-1080p": [
+"/msra/floors/13/rooms/13480/msra-projector-1234"
+],
+"starbucks-coffee-machine": [
+"/msra/floors/12/kitchen-room/kitchen-coffee-machine"
+]
+}
+
+
+get things and spaces of user: 
+
+my public things:
+GET on /rest/:user_uri/things/public.json?auth_token=__________
+
+my public spaces:
+GET on /rest/:user_uri/spaces/public.json?auth_token=__________
+
+my private things:
+GET on /rest/:user_uri/things/private.json?auth_token=__________
+
+my private spaces:
+GET on /rest/:user_uri/spaces/private.json?auth_token=__________
+
+ex: /rest/msra/mass/jeffhsu/things/public.json?auth_token=sMlvoAoiahXfNOMN23Fq
+
+{
+"floor-light": [
+"/msra/floors/12/kitchen-room/kitchen-msra-light-1195"
+],
+"refrigerator": [
+"/msra/floors/12/kitchen-room/kitchen-refrigerator"
+],
+"sms-gateway": [
+"/msra/sms-gateway"
+],
+"starbucks-coffee-machine": [
+"/msra/floors/12/kitchen-room/kitchen-coffee-machine"
+]
+}
+
+POST to /rest/entities/create to create new entity:
+{
+   name:
+   livePulseID:
+   type:
+   uri:
+   description:
+   ownership: (public or user uri)
+   subtype:
+}
+
+POST to /rest/entities/create to create new entity:
+{
+   name: msra-light-1234
+   livePulseID: 2323
+   type: thing
+   uri: /msra/floors/12/kitchen/msra-light-1234
+   description: light in kitchen
+   ownership: public
+   subtype: desk-lamp
+}
+
+
+
+POST to /rest/triggers/create
+{"trigger": 
+	{
+	 "title": "1", 
+         "triggering_entity":"/msra/sms-gateway", 
+         "triggering": {"name": "send", 
+			"type": "method", 
+			"args": {"phone_number" : '1231231233', 
+				 "text: "hi jeff!" }
+		       }
+         "triggered_entity":"/msra/floors/12/rooms/12304/msra-light-1235", 
+         "triggered":  {"name": "turnOn", "type": "method"},		
+	 "description":"its a send message description!"
+         "owner" : "/msra/mass/jeffhsu"
+        }
+}
+
+
+

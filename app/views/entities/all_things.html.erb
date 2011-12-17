@@ -1,0 +1,36 @@
+<div data-role="page" id="mainpage">
+
+<div data-role="header">
+  <h1>My Things</h1>
+  <%= link_to 'Home', home_menu_path, {"class" => "ui-btn-left", "data-icon"=>"home"} %>
+  <%= link_to 'Add New', add_thing_path, {"class" => "ui-btn-right", "data-icon" => "plus"} %>
+</div>
+<div data-role="content" class="ui-content" role="main">
+<% if not @hash.empty? %>
+<ul data-role="listview" data-filter="true" class="ui-listview" id="list">
+<% @hash.keys.each do |subtype| %>
+	<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-b"><%= subtype %> </li>
+  	<% @hash[subtype].each do |thing| %>
+	<li>
+          <%= link_to thing, "/liveSynergy" + thing, {:id => '#', :class => 'ui-link-inherit'}%>
+          <%= link_to 'Delete', "/delete" + thing, "data-icon" => "minus" %>
+	<% end %>
+	<% end %>
+</ul>
+<% else %>
+<h2>  Please add a thing to your collection! </h2>
+<% end %>
+</div>
+
+
+<div data-role="navbar" class="nav-glyphish-example ui-navbar" data-grid="d" role="navigation">
+		<ul class="ui-grid-d">
+			<li class="ui-block-a"><a href="#" id="chat" data-icon="custom" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-down-a ui-btn-hover-a"><span class="ui-btn-inner"><span class="ui-btn-text">Chat</span><span class="ui-icon ui-icon-custom ui-icon-shadow"></span></span></a></li>
+			<li class="ui-block-b"><a href="#" id="email" data-icon="custom" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-top"><span class="ui-btn-inner"><span class="ui-btn-text">Email</span><span class="ui-icon ui-icon-custom ui-icon-shadow"></span></span></a></li>
+			<li class="ui-block-c"><a href="#" id="skull" data-icon="custom" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-down-a ui-btn-up-a"><span class="ui-btn-inner"><span class="ui-btn-text">Danger</span><span class="ui-icon ui-icon-custom ui-icon-shadow"></span></span></a></li>
+			<li class="ui-block-d"><a href="#" id="beer" data-icon="custom" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a"><span class="ui-btn-inner"><span class="ui-btn-text">Beer</span><span class="ui-icon ui-icon-custom ui-icon-shadow"></span></span></a></li>
+		</ul>
+		</div>
+
+</div>
+

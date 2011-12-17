@@ -1,0 +1,156 @@
+<div data-role="page">
+
+<div data-role="header">
+  <h1>Thing</h1>
+<%= link_to 'Back', '#', {"class" => "ui-btn-left", "data-rel"=>"back", "data-icon"=>"arrow-l"} %>
+  <%= link_to 'Add', entities_add_new_thing_path, "data-role" => "button", "data-icon" => "plus", "class" => "ui-btn-right", "id" => "add-button" %>
+  <!-- # add javascript here to pull up dialog.... -->
+</div>
+<div data-role="content">
+  <ul data-role="listview">
+    <% if @entities.empty? %>
+    <h1> Please add a thing. </h1>
+    <% else %>
+      <% @entities.each do |thing| %>
+        <li>
+          <%= link_to thing, ('/entities/thing/' + @ids[thing].to_s), {}, :id => @ids[thing]%>
+          <%= link_to 'Show', entities_edit_thing_path(thing), "data-icon" => "minus" %>
+        </li>
+      <% end %>
+    <% end %>
+</ul>
+</div>
+
+</div>
+
+
+<script>	 
+	 // Global declarations - assignments made in $(document).ready() below
+	var addedDialogVar = null;
+	var listVar = null;
+	var hdrMainvar = null;
+	var contentMainVar = null;
+	var ftrMainVar = null;
+	var contentTransitionVar = null;
+	var stateLabelVar = null;
+	var whatLabelVar = null;
+	var stateVar = null;
+	var whatVar = null;
+	var form1var = null;
+	var confirmationVar = null;
+	var contentDialogVar = null;
+	var hdrConfirmationVar = null; 
+	var contentConfirmationVar = null;
+	var ftrConfirmationVar = null;
+	var inputMapVar = null;
+
+	// Constants
+	var MISSING = "missing";
+	var EMPTY = "";
+	var NO_STATE = "ZZ";
+</script>
+<script>
+ 
+	// $(document).ready(function() {
+	// $('[data-role=page]').live('pageshow', function (event) {
+			
+			// $('#aboutPage').live('pagebeforecreate',function(event){
+			//   // alert('This page was just inserted into the dom!');
+			// });
+	// $(document).bind("mobileinit", function(){
+	$('#mainpage').live('pagecreate',function(event){
+		// Assign global variables
+		
+		// alert('harro');
+		addedDialogVar = $('#dialog');
+		listVar = $('#list')
+		hideAddedDialog();
+
+	}); 
+	
+	$('a.view').click(function() {
+		// alert($(this).attr('id'));
+		
+		
+		$.ajax({
+		  type: 'POST',
+		  url: '/entities/view_thing/',
+		  data: {'id' : $(this).attr('id')},
+		  success: (function() { 
+			// hideList();
+			// $.mobile.changePage('#dialog','pop',false,true)
+			
+			// showAddedDialog();
+			}),
+		});
+		
+		return false;      
+	});
+	
+	$('a.edit').click(function() {
+		// alert($(this).attr('id'));
+		
+		
+		$.ajax({
+		  type: 'POST',
+		  url: '/entities/edit_thing',
+		  data: {'id' : $(this).attr('id')},
+		  success: (function() { 
+			// hideList();
+			// $.mobile.changePage('#dialog','pop',false,true)
+			
+			// showAddedDialog();
+			}),
+		});
+		
+		return false;      
+	});
+	
+	$('#home_menu').click(function() {
+		hideAddedDialog();
+		showList();
+	});
+	
+	$('#back').click(function() {
+		hideAddedDialog();
+		showList();
+	});
+	
+	function hideAddedDialog(){
+		addedDialogVar.hide();
+	}
+	
+	function hideList(){
+		listVar.hide();
+	}  
+	
+	function showList(){
+		listVar.show();
+	} 
+
+	function showAddedDialog(){
+		addedDialogVar.show();
+	}
+	
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

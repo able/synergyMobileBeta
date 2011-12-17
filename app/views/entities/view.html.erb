@@ -1,0 +1,105 @@
+
+<div data-role="page">
+
+<div data-role="header">
+  <h1>Synergy <%= @entity.type.titleize %></h1>
+  <%= link_to 'Back', '#', {"class" => "ui-btn-left", "data-rel"=>"back", "data-icon"=>"arrow-l"} %>
+  <%= link_to 'Home', home_menu_path, "data-role" => "button", "data-icon" => "home", "class" => "ui-btn-right", "id" => "add-button" %>
+  <!-- # add javascript here to pull up dialog.... -->
+</div>
+
+<div data-role="content">
+
+<% if not @ent_in_coll %>
+        <%= link_to "/add/" + params[:uri], {"data-role"=>"button", "data-theme" =>"e", "class" => "ui-btn uibtn-corner-all ui-shadow ui-btn-up-e" } do %>
+<span class='ui-btn-inner ui-btn-corner-all'><span class='ui-btn-text'> Add to My Collection </span></span>
+<%end%>
+	<%else%>
+        <%= link_to "/delete/" + params[:uri], {"data-role"=>"button", "data-theme" =>"e", "class" => "ui-btn uibtn-corner-all ui-shadow ui-btn-up-e" } do %>
+<span class='ui-btn-inner ui-btn-corner-all'><span class='ui-btn-text'> Remove from My Collection </span></span>
+        <% end %>
+        <% end%>
+
+	<h2 style="text-align: center;"> Entity </h2> <p style="text-align: center;"> <%= @entity.uri %></p>
+
+	<h2 style="text-align: center;"> Type </h2> <p style="text-align: center;"> <%= @entity.subtype.titleize %></p>
+
+	<% if not @children.empty? %>
+	<h2 style="text-align: center;"> Children </h2>
+	<% @children.each do |child| %>
+            <%= link_to child.name, '/liveSynergy' + child.uri, {"data-role"=>"button"} %>
+	<% end %>
+	<% end %>
+        <% if @entity.subtype == 'sms-gateway' %>
+	<% if not @entity.methods.empty? %>
+	<h2 style="text-align: center;"> Methods </h2>
+	<% @entity.methods.each do |method| %>
+            <%= link_to method["name"], "/liveSynergy/" + params[:uri] + "/methods/" + method["name"], {"class" => "method", "data-role"=>"button"} %>
+	<% end %>
+        <% end %>
+
+
+	<% if not @entity.events.empty? %>
+	<h2 style="text-align: center;"> Events </h2>
+	<% @entity.events.each do |event| %>
+	     <%= link_to event["name"], "/liveSynergy/" + params[:uri] + "/events/" + event["name"], {"data-role"=>"button", "data-theme" => "c"} %>
+	<% end %>
+        <% end %>
+	<% end %>
+        <% if (@entity.livePulseID == "" || @entity.livePulseID == nil) && @entity.subtype != 'sms-gateway'%>
+        <h2 style="text-align: center;"> LivePulse </h2>
+	<p style="text-align: center;">To access the API of this entity, add a LivePulse:</p>
+        <%= link_to "/liveSynergy/" + params[:uri] + "/add_livePulse", {"data-role"=>"button", "data-theme" =>"e", "class" => "ui-btn uibtn-corner-all ui-shadow ui-btn-up-e" } do %>
+<span class='ui-btn-inner ui-btn-corner-all'><span class='ui-btn-text'> Add LivePulse </span></span>
+        <% end %>
+        <% elsif @entity.subtype != 'sms-gateway'%>
+        <h2 style="text-align: center;"> LivePulse </h2>
+        <p style="text-align: center;"><%= @entity.livePulseID %> </p>
+	<div data-role="controlgroup">
+	<% if not @entity.methods.empty? %>
+	<h2 style="text-align: center;"> Methods </h2>
+	<% @entity.methods.each do |method| %>
+            <%= link_to method["name"], "/liveSynergy/" + params[:uri] + "/methods/" + method["name"], {"class" => "method", "data-role"=>"button"} %>
+	<% end %>
+        <% end %>
+
+
+	<% if not @entity.events.empty? %>
+	<h2 style="text-align: center;"> Events </h2>
+	<% @entity.events.each do |event| %>
+	     <%= link_to event["name"], "/liveSynergy/" + params[:uri] + "/events/" + event["name"], {"data-role"=>"button", "data-theme" => "c"} %>
+	<% end %>
+        <% end %>
+</div>
+
+ <%= link_to "/liveSynergy/" + params[:uri] + "/add_livePulse", {"data-role"=>"button", "data-theme" =>"e", "class" => "ui-btn uibtn-corner-all ui-shadow ui-btn-up-e" } do %>
+<span class='ui-btn-inner ui-btn-corner-all'><span class='ui-btn-text'> Change LivePulse </span></span>
+<%end%>
+        <% end %>
+</div>
+
+</div>
+
+
+
+<script type="text/javascript">
+	$('#mainpage').live('pagecreate',function(event){
+	
+		$('.method').click(function(){
+
+$.mobile.showPageLoadingMsg();	
+		});	
+	});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+

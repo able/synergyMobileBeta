@@ -1,0 +1,163 @@
+<div data-role="page" id="one">
+  <div data-role="header" data-position="fixed">
+    <h1>Add New Thing</h1>
+    <%= link_to 'Home', home_menu_path, {"class" => "ui-btn-left", "data-icon"=>"home"} %>
+<div data-role="navbar" class="ui-navbar ui-navbar-noicons" role="navigation" style="text-align: center; ">
+  <div class="ui-grid-b">
+    <div class="ui-block-a"><div class="ui-bar ui-bar-e" style="height:15px"><span class="ui-btn-text" style="font-size: 10px;">Type?</span></div></div>
+    <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:15px"><span class="ui-btn-text" style="font-size: 10px;">Where?</span></div></div>
+    <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:15px"><span class="ui-btn-text" style="font-size: 10px;">Attributes?</span></div></div>
+  </div>
+
+</div>
+
+  </div>
+
+  <div data-role="content">
+    <h2 style='text-align: center;'>Select type:</h2>
+    <div class="ui-content filter-list">
+      <ul data-role="listview" data-filter="true" >
+      <% Entity.all_thing_types.each do |thing| %>
+        <li>
+          <a href="#two" id='<%= thing %>' class='ui-link-inherit subtype'><%= thing %></a>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+ </br>
+ </br>
+ </br>
+  <!-- <div data-role="footer" data-id="foo1" data-position="fixed" class="ui-footer ui-bar-a ui-footer-fixed fade ui-fixed-inline" role="contentinfo" style="top: 0px; "> -->
+</div>
+<div data-role="page" id="two" data-url="two" >
+  <div data-role="header" data-position="fixed">
+    <h1>Add New Thing</h1>
+    <%= link_to 'Home', home_menu_path, {"class" => "ui-btn-left", "data-icon"=>"home"} %>
+
+
+<div data-role="navbar" class="ui-navbar ui-navbar-noicons" role="navigation" style="text-align: center; ">
+  <div class="ui-grid-b">
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:15px"><span class="ui-btn-text" style="font-size: 10px;">Type?</span></div></div>
+    <div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:15px"><span class="ui-btn-text" style="font-size: 10px;">Where?</span></div></div>
+    <div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:15px"><span class="ui-btn-text" style="font-size: 10px;">Attributes?</span></div></div>
+  </div>
+   
+</div>
+      
+
+
+  </div>
+
+  <div data-role="content">
+    <h2 style='text-align: center;'>Select containing space:</h2>
+    <div class="ui-content filter-list" role="main">
+      <ul data-role="listview" data-filter="true" class="ui-listview" id="list">
+        <% @hash.keys.each do |subtype| %>
+        <li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-a"><%= subtype %> </li>
+          <% @hash[subtype].each do |space| %>
+          <li> <a href="#three" rel="external" id='<%= space %>' class='ui-link-inherit uri'><%= space %></a></li>
+          <% end %>
+        <% end %>
+      </ul>
+
+
+
+    </div>
+  </div>
+
+
+
+
+</div>
+<div data-role="page" id="three" data-url="three" data-theme='a'>
+
+  <div data-role="header" data-position="fixed">
+    <h1>Add New Thing</h1>
+    <%= link_to 'Home', home_menu_path, {"class" => "ui-btn-left",  "data-icon"=>"home"} %>
+
+<div data-role="navbar" class="ui-navbar ui-navbar-noicons" role="navigation" style="text-align: center; ">
+  <div class="ui-grid-b">
+    <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:15px"><span class="ui-btn-text" style="font-size: 10px;">Type?</span></div></div>
+    <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:15px"><span class="ui-btn-text" style="font-size: 10px;">Where?</span></div></div>
+    <div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:15px"><span class="ui-btn-text" style="font-size: 10px;">Attributes?</span></div></div>
+  </div>
+   
+</div>
+      
+
+
+  </div>
+  <div data-role="content">
+    <%= form_for(:entity) do |f| %>
+      <%= render 'shared/error_messages', :target => @entity %>
+      <%= render 'fields_new_thing', :f => f %>
+    <% end %>
+  </div>
+
+</div>
+
+
+<script>	 
+	 // Global declarations - assignments made in $(document).ready() below
+	var spaceContainer = null;
+	var subtype = null;
+        var ownership = 'public'
+</script>
+
+<script type="text/javascript">
+$('#one').live('pagecreate',function(event){
+        $("a.subtype").click(function(){
+	    subtype = $(this).attr('id');
+	});
+
+        $(".uri").click(function(){
+	    spaceContainer = $(this).attr('id');
+	});
+
+	$("input[type='radio']").bind( "change", function(event, ui) {
+            ownership = $(this).attr('value');
+        });
+
+  	var post = {};
+		
+ 	$("#submit").click( function(){
+            var item = 'name';
+            val = $('#' + item).val(); 
+	    post[item] = val;
+
+	    item = 'livePulseID';
+            val = $('#' + item).val(); 
+	    post[item] = val;
+
+	    item = 'description';
+            val = $('#' + item).val(); 
+	    post[item] = val;
+
+	    item = 'ownership';
+	    post[item] = ownership;
+
+            item = 'type';
+	    post['type'] = 'thing';
+
+            item = 'subtype';
+	    post['subtype'] = subtype;
+
+	    item = 'spaceContainer';
+	    post['uri'] = spaceContainer;
+        
+	    $.ajax({
+		  type: 'POST',
+		  url: '/new_thing_created',
+		  data: post,
+		  success: (function() { 
+		        window.location = '/addedThing';
+                  }),
+	    });
+		
+	 });	
+});
+</script>
+
+
+

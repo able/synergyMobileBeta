@@ -1,0 +1,38 @@
+<div data-role="page">
+
+
+<div data-role="header">
+      <h1><%= @title || 'Synergy' %></h1>
+      <% unless user_signed_in? %>
+        <%= link_to 'Sign In', new_user_session_path, "class" => "ui-btn-right" %>
+      <% else %>
+        <%= link_to 'Sign Out', destroy_user_session_path, "class" => "ui-btn-right" %>
+      <% end %>
+</div>
+<div data-role="content">
+<p>To enable richer and more efficient interactions with their environment,
+humans need real-time fine-grained knowledge
+and control over physical objects, and the environment needs
+to be aware of humans and make intelligent decisions. To
+facilitate this, we propose an architecture composed of three
+parts – an accurate indoor localization primitive, a reliable
+IPv6 based networking layer, and an event-based, hierarchical
+virtual object overlay. We design and evaluate a system
+that provides real-time and precise indoor human localization
+using magnetic induction. Wireless mobile nodes
+(LiveLinks) are used to detect dynamic magnetic fields generated
+by beacons (LivePulses) for localization. We show
+that, by building upon this primitive, we are able to augment
+physical devices with additional services in the virtual
+overlay to enable richer interaction between humans and objects.
+Finally, we evaluate our system with a “personal energy
+footprint” application that tracks individuals’ real-time
+energy usage. </p>
+<%= link_to new_user_registration_path, {"data-role"=>"button","data-theme"=>"e","class"=>"ui-btn ui-btn-corner-all ui-shadow ui-btn-down-e ui-btn-up-e"} do %>
+<span class='ui-btn-inner ui-btn-corner-all'><span class='ui-btn-text'>Join Now</span></span>
+<% end %>
+
+
+</div>
+
+</div>

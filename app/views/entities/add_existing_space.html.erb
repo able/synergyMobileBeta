@@ -1,0 +1,31 @@
+<div data-role="page" id="mainpage">
+
+<div data-role="header">
+  <h1>Add Existing Space</h1>
+  <%= link_to 'Home', home_menu_path, {"class" => "ui-btn-left", "data-icon"=>"home"} %>
+  <%= link_to 'Add New', entities_add_new_space_path, {"class" => "ui-btn-right", "data-icon"=>"plus"} %>
+</div>
+
+	
+
+
+<div data-role="content" class="ui-content filter-list" role="main">
+<!-- When choice is chosen, add to user's list of items of interest. -->
+<ul data-role="listview" data-filter="true" class="ui-listview" id="list">
+
+<% @hash.keys.each do |subtype| %>
+	<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-a"><%= subtype %> </li>
+  	<% @hash[subtype].each do |space| %>
+	<li>
+          <%= link_to space, "/liveSynergy" + space, {:id => '#', :class => 'ui-link-inherit'}%>
+          <% if current_user.spaces.include?(Entity.where(:uri => space)[0]) %>
+          <%= link_to 'Show', "/delete" + space, "data-icon" => "minus", "data-theme" => "e" %>
+          <% else %>
+          <%= link_to 'Show', "/add" + space, "data-icon" => "add", "data-theme" => "e" %>
+          <% end %>
+	<% end %>
+<% end %>
+</ul>
+</div>
+
+</div>

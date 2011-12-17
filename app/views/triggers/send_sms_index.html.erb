@@ -1,0 +1,41 @@
+
+<div data-role="page">
+
+<div data-role="header">
+  <h1>Method</h1>
+  <%= link_to 'Back', '#', {"class" => "ui-btn-left", "data-rel"=>"back", "data-icon"=>"arrow-l"} %>
+  <%= link_to 'Home', home_menu_path, "data-role" => "button", "data-icon" => "home", "class" => "ui-btn-right", "id" => "add-button" %>
+  <!-- # add javascript here to pull up dialog.... -->
+</div>
+<div data-role="content">
+
+	<h2 style="text-align: center;"> Send SMS </h2> <p style="text-align: center;"> send a sms to the user of your choice!</p>
+	<%= form_for(:entity) do |f| %>
+	  <div class="field" data-role="fieldcontain">
+	  Friend: <br />
+   	    <%= f.select :user, options_for_select(@friends, '0')%>
+	  </div>
+
+	  <div class="field" data-role="fieldcontain">
+	  Text:
+	    <br />
+	    <%= f.text_area :text %>
+	  </div>
+
+	  <div class="actions">
+	    <%= f.submit "Send SMS to Friend!", {'data-ajax' => false} %>
+	  </div>
+	<% end %>
+
+	<h2 style="text-align: center;"> or </h2>
+	<div data-role="controlgroup">
+        <%= link_to "/triggers/add/msra/sms-gateway/methods/send", {"data-role"=>"button", "data-theme" =>"e", "class" => "ui-btn uibtn-corner-all ui-shadow ui-btn-up-e ui-icon-arrow-u", "data-ajax"=> "false"} do %>
+        <span class='ui-btn-inner ui-btn-corner-all'><span class='ui-btn-text'> Connect a Trigger </span></span>
+        <% end%>
+        </div>
+</ul>
+</div>
+
+</div>
+<p id="notice"><%= notice %></p>
+

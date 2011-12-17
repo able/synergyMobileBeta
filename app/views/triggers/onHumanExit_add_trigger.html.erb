@@ -1,0 +1,113 @@
+<div data-role="page" id="mainpage" data-theme='a'>
+
+<div data-role="header">
+  <h1>Add New Trigger</h1>
+    <%= link_to 'Home', home_menu_path, {"class" => "ui-btn-left",  "data-icon"=>"home"} %>
+</div>
+
+<div data-role="content">
+
+ <%= form_for(:trigger) do |f| %>
+  <div class="field" data-role="fieldcontain">
+	<h2> title: </h2> 
+	<%= f.text_field :title %>
+  </div>
+
+  <div class="field" data-role="fieldcontain">
+	<h2> when this user: </h2> 
+        <%= f.select :args1, options_for_select(@friends)%> 
+  </div>
+
+  <div class="field" data-role="fieldcontain">
+	<h2> exits this space: </h2> 
+	<%= f.select :triggering, options_for_select(@spaces), {:id => 'triggering'} %> 
+  </div>
+	
+  <div class="field" data-role="fieldcontain">
+        <h2> make this: </h2> 
+        <%= f.select :triggered_entity, options_for_select(@entities), {:id => 'triggered_entity'}%> 
+  </div>
+
+  <div class="field" data-role="fieldcontain">
+	<h2> do this: </h2> 
+	<%= f.select :triggered, options_for_select([]), {:id => 'triggered'} %> 
+  </div>
+	
+	<div id="args2"></div>
+
+  <div class="field" data-role="fieldcontain">
+        <h2> description </h2> 
+  	<%= f.text_area :description, {:id => 'description'} %>
+  </div>
+
+	<h2> and when you are ready: </h2> 
+        <div class="actions">
+        <%= f.submit "Create Trigger!", {'data-ajax' => false, 'data-theme' => 'e'} %>
+        </div>
+</div>
+</div>
+<script type="text/javascript">
+    $('#mainpage').live('pagecreate',function(event){
+	$('select#trigger_triggered_entity').change( function() {
+	    $.ajax({
+	        type: 'POST',
+		dataType: 'json',
+		url: '/entities/update_form_add_new_trigger',
+	        data: {'url': $(this).val()},
+		success: (function(data) {
+		    var events = data.events;
+		    var options = '<option value="">Select An Event</option>';
+		    for (var i = 0; i < events.length; i++) {
+			options += '<option data-type="event" value="' + events[i].name + '">' + events[i].name + '</option>';
+		    }		
+                    var methods = data.methods;
+                
+                    for (var i = 0; i < methods.length; i++) {
+			if (methods[i].name != 'currentOccupancy') {
+			    options += '<option data-type="method" value="' + methods[i].name + '">' + methods[i].name + '</option>';
+			}
+                    }       
+	
+		    $('select#trigger_triggered').html(options).trigger('refresh');
+		    $('select#trigger_triggered').change( function() { 
+			$('div#args2').empty();
+		        var name = $(this).attr('value');
+                                    if (name == 'whenNumOccupancyReachesX'){
+                                        var argStr = '<h2>when the number of people in the room is:</h2><input type="number" name="trigger[whenNumOccupancyReachesX2]" id="trigger_whenNumOccupancyReachesX2" value="" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c">'
+                                          $("div#args2").html(argStr).trigger('create');
+                                    }
+
+			if (name == 'onHumanEnter' || name == 'onHumanExit' || name == 'send'){
+			    $.ajax({
+	                        type: 'post',
+			        dataType: 'json',
+			        url: '/allfriends',
+				data: '',
+		   	        success: (function(data) {
+				    if (name == 'send'){
+					var argStr = "<h2>notify this user with SMS:</h2><select id='triggers_args2' name='trigger[args2]'>";
+                    		        for (var i = 0; i < data.length; i++) {
+			                    argStr += '<option data-type="method" value="' + data[i].uri + '">' + data[i].uri + '</option>';	   
+				        }       
+				        argStr += '</select>';	
+					argStr += '<h2> sms message:</h2><textarea cols="40" id="trigger_sendtext2" name="trigger[sendtext2]" rows="20" class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-a"></textarea>';
+			   	        $("div#args2").html(argStr).trigger('create');
+				    } else {
+   				        var argStr = "<h2>for this user:</h2><select id='triggers_args2' name='trigger[args2]'>";
+                    		        for (var i = 0; i < data.length; i++) {
+			                    argStr += '<option data-type="method" value="' + data[i].uri + '">' + data[i].uri + '</option>';	   
+				        }       
+				        argStr += '</select>';	
+			   	        $("div#args2").html(argStr).trigger('create');
+				    }
+				})
+			   });
+			}
+		    });	
+		})
+	    });
+	});	
+   });
+</script>
+<% end %>
+

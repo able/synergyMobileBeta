@@ -1,0 +1,395 @@
+
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+authenticatingauthenticatingauthenticatinghi#<User:0xb27a258>#<User:0xb27a258>{"name"=>"/liveSynergy/demo-booth/lcd-monitor", "livePulseID"=>"E5D9", "description"=>"", "ownership"=>"public", "type"=>"space", "subtype"=>"focus-room", "uri"=>"/msra", "controller"=>"entities", "action"=>"new_thing_created"}CURRENT USERjeffhsupublicSAVINGIN VIEW ADDED DIALOGdeletingmsra/-livesynergy-demo-booth-lcd-monitor{"controller"=>"entities", "action"=>"view", "uri"=>"msra/demo-booth/demo-booth-light"}authenticatinghi#<User:0xb0eeb28>#<User:0xb0eeb28>{"name"=>"lcd-monitor", "livePulseID"=>"E5D9", "description"=>"lcd monitor for sensys demo", "ownership"=>"public", "type"=>"thing", "subtype"=>"device", "uri"=>"/msra/demo-booth", "controller"=>"entities", "action"=>"new_thing_created"}CURRENT USERjeffhsupublicSAVINGauthenticatinghi#<User:0xb35c1d0>#<User:0xb35c1d0>/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+{"controller"=>"entities", "action"=>"view", "uri"=>"msra/demo-booth/demo-booth-light"}{"controller"=>"entities", "action"=>"view", "uri"=>"msra/demo-booth/lcd-monitor"}authenticatinghi#<User:0xb2ab6a0>#<User:0xb2ab6a0>/msra/demo-booth/methods/currentOccupancyResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+/msra/demo-booth/methods/currentOccupancyResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+/msra/demo-booth/methods/currentOccupancyResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+authenticatinghi#<User:0xb2a2f00>#<User:0xb2a2f00>/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+authenticatinghi#<User:0xb428b54>#<User:0xb428b54>authenticatinghi#<User:0xb292a60>#<User:0xb292a60>authenticatinghi#<User:0xaf742e8>#<User:0xaf742e8>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+authenticatinghi#<User:0xb2facf0>#<User:0xb2facf0>authenticatinghi#<User:0xb1bde00>#<User:0xb1bde00>authenticatinghi#<User:0xb3311ec>#<User:0xb3311ec>authenticatinghi#<User:0xb017de4>#<User:0xb017de4>authenticatinghi#<User:0xb17202c>#<User:0xb17202c>authenticatinghi#<User:0xb2af764>#<User:0xb2af764>authenticatinghi#<User:0xb3db084>#<User:0xb3db084>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+authenticatinghi#<User:0xb3e4a1c>#<User:0xb3e4a1c>authenticatinghi#<User:0xb29cad8>#<User:0xb29cad8>{"name"=>"light", "livePulseID"=>"94FD", "description"=>"", "ownership"=>"public", "type"=>"thing", "subtype"=>"floor-light", "uri"=>"/msra/demo-booth", "controller"=>"entities", "action"=>"new_thing_created"}CURRENT USERjeffhsupublicSAVINGauthenticatinghi#<User:0xb37345c>#<User:0xb37345c>authenticatinghi#<User:0xb325c98>#<User:0xb325c98>authenticatinghi#<User:0xb3b7f6c>#<User:0xb3b7f6c>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+authenticatinghi#<User:0xb3a4d2c>#<User:0xb3a4d2c>authenticatinghi#<User:0xb22869c>#<User:0xb22869c>authenticatinghi#<User:0xafe2824>#<User:0xafe2824>authenticatinghi#<User:0xb277ff8>#<User:0xb277ff8>authenticatinghi#<User:0xb3681c4>#<User:0xb3681c4>/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+authenticatinghi#<User:0xb21f380>#<User:0xb21f380>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+authenticatinghi#<User:0xb2b1744>#<User:0xb2b1744>authenticatinghi#<User:0xb32e014>#<User:0xb32e014>authenticatinghi#<User:0xb3c76ec>#<User:0xb3c76ec>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+authenticatinghi#<User:0xacbe01c>#<User:0xacbe01c>/msra/demo-booth/lcd-monitor/methods/turnOn/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+Response 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+authenticatinghi#<User:0xab1f260>#<User:0xab1f260>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+authenticatinghi#<User:0xad72ff8>#<User:0xad72ff8>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+authenticatinghi#<User:0xabe61f8>#<User:0xabe61f8>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+/msra/demo-booth/lcd-monitor/methods/turnOff/msra/demo-booth/lcd-monitor/methods/turnOffResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+Response 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+authenticatinghi#<User:0x9c31794>#<User:0x9c31794>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+authenticatinghi#<User:0x9ba3e58>#<User:0x9ba3e58>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+authenticatinghi#<User:0x9a07694>#<User:0x9a07694>{"name"=>"fan", "livePulseID"=>"E5D9", "description"=>"", "ownership"=>"public", "type"=>"thing", "subtype"=>"fan", "uri"=>"/msra/demo-booth", "controller"=>"entities", "action"=>"new_thing_created"}CURRENT USERjeffhsupublicSAVINGauthenticatinghi#<User:0x9c4ccd8>#<User:0x9c4ccd8>authenticatinghi#<User:0x9cd0790>#<User:0x9cd0790>/msra/demo-booth/fan/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/fan/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/fan/methods/turnOff/msra/demo-booth/fan/methods/turnOffResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+Response 200 OK: method handler response
+/msra/demo-booth/fan/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/fan/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/fan/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/fan/methods/turnOffResponse 200 OK: method handler response
+authenticatinghi#<User:0x9aaaa60>#<User:0x9aaaa60>authenticatinghi#<User:0x9b58ef8>#<User:0x9b58ef8>/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+authenticatinghi#<User:0x9d5d53c>#<User:0x9d5d53c>authenticatinghi#<User:0x98fe16c>#<User:0x98fe16c>/msra/demo-booth/fan/methods/turnOffResponse 200 OK: method handler response
+authenticatinghi#<User:0x9bcfe18>#<User:0x9bcfe18>/msra/demo-booth/lcd-monitor/methods/turnOffResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+authenticatinghi#<User:0x9be7270>#<User:0x9be7270>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+{"controller"=>"entities", "action"=>"view", "uri"=>"msra/demo-booth"}{"controller"=>"entities", "action"=>"view", "uri"=>"msra/demo-booth/demo-booth-light"}authenticatinghi#<User:0x99e7240>#<User:0x99e7240>/msra/demo-booth/light/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/fan/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/fan/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/fan/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/fan/methods/turnOffResponse 200 OK: method handler response
+
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+authenticatingauthenticatinghi#<User:0xb54ed80>#<User:0xb54ed80>/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOn
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+Response 200 OK: method handler response
+
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+authenticating/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+authenticatinghi#<User:0xa2c73c4>#<User:0xa2c73c4>/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+authenticatinghi#<User:0xa146978>#<User:0xa146978>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+authenticatinghi#<User:0xa3bd3f0>#<User:0xa3bd3f0>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+authenticatinghi#<User:0xa427a48>#<User:0xa427a48>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+authenticatinghi#<User:0xa1c2ab4>#<User:0xa1c2ab4>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+authenticatinghi#<User:0xa1298f0>#<User:0xa1298f0>
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/fan/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/fan/methods/turnOnResponse 200 OK: method handler response
+authenticatinghi#<User:0xa452a40>#<User:0xa452a40>/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+authenticating/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+/msra/demo-booth/light/methods/turnOff/msra/demo-booth/light/methods/turnOffResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+Response 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 500 Internal Server Error: <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/light/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOnResponse 200 OK: method handler response
+/msra/demo-booth/lcd-monitor/methods/turnOffResponse 200 OK: method handler response
+[ pid=5355 thr=3068672880 file=ext/nginx/HelperAgent.cpp:921 time=2011-11-04 10:09:28.939 ]: Couldn't forward the HTTP response back to the HTTP client: It seems the user clicked on the 'Stop' button in his browser.
+
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+
+[ pid=5355 thr=3068873584 file=ext/nginx/HelperAgent.cpp:921 time=2011-11-04 10:18:55.359 ]: Couldn't forward the HTTP response back to the HTTP client: It seems the user clicked on the 'Stop' button in his browser.

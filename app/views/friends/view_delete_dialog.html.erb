@@ -1,0 +1,12 @@
+<div data-role="page" id="mainpage" class="ui-page ui-body-c ui-page-active" style="min-height: 562px; ">
+    <div data-role="header" data-theme="d" data-position="inline" class="ui-header ui-bar-d" role="banner">
+    <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">Synergy Friend Removed</h1>
+		</div>
+
+		<div data-role="content" data-theme="c" class="ui-content ui-body-c" role="main">
+			<h1 style="text-align: center;">Friend has been removed from your list.</h1>
+			 <p style="text-align: center;"><code style="text-align: center;"><%= '/' + params[:uri] %> </code></p>
+		 	<%= link_to friends_path, {'data-role'=>'button', 'data-theme'=>"c", 'class' => "ui-btn ui-btn-corner-all ui-shadow ui-btn-up-c"} do %> <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">View Friends</span></span><%end%>    
+		 	<%= link_to home_menu_path, {'data-role'=>'button', 'data-theme'=>"c", 'class' => "ui-btn ui-btn-corner-all ui-shadow ui-btn-up-c"} do %> <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back to Home Menu</span></span><%end%>    
+		</div>
+	</div>

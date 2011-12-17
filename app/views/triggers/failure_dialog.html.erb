@@ -1,0 +1,16 @@
+<div data-role="page" id="mainpage" class="ui-page ui-body-c ui-page-active" style="min-height: 562px; ">
+    <div data-role="header" data-theme="d" data-position="inline" class="ui-header ui-bar-d" role="banner">
+    <h1 class="ui-title" tabindex="0" role="heading" aria-level="1">Actuation</h1>
+		</div>
+
+		<div data-role="content" data-theme="c" class="ui-content ui-body-c" role="main">
+<div style='text-align: center;'>
+                        <h1>Actuation Failure </br><code>We are currently experiencing network problems. Please try again later.</code></h1>
+</div>
+
+			<!-- <p>This is a regular page, styled as a dialog. To create a dialog, just link to a normal page and include a transition and <code>data-rel="dialog"</code> attribute.</p> -->
+			<%= link_to "#", {'data-role' => "button", 'data-rel' => 'back', 'data-theme' => "b", 'class' => "ui-btn ui-btn-corner-all ui-shadow ui-btn-up-b"} do %><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text"> Back to Entity</span></span><% end %> 
+			<%= link_to home_menu_path, {'data-role'=>'button', 'data-theme'=>"c", 'class' => "ui-btn ui-btn-corner-all ui-shadow ui-btn-up-c"} do %> <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Go to Home Menu</span></span><%end%>    
+
+		</div>
+	</div>

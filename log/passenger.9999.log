@@ -1,0 +1,6 @@
+
+Mongoid preload_models is set to false. If you are using
+inheritance in your application model please set this to true or 
+you will experience querying inconsistencies in dev mode. Note that
+this will severely decrease performance in dev mode only.
+

@@ -1,0 +1,33 @@
+
+<div data-role="page">
+
+<div data-role="header">
+  <h1>Event</h1>
+  <%= link_to 'Back', '#', {"class" => "ui-btn-left", "data-rel"=>"back", "data-icon"=>"arrow-l"} %>
+  <%= link_to 'Home', home_menu_path, "data-role" => "button", "data-icon" => "home", "class" => "ui-btn-right", "id" => "add-button" %>
+  <!-- # add javascript here to pull up dialog.... -->
+</div>
+<div data-role="content">
+
+	<h2 style="text-align: center;"> onHumanEnter </h2> <p style="text-align: center;"> this event is triggered once the friend of your choice enters the space <code><%= @entity.uri %></code></p>
+
+	<div data-role="controlgroup">
+        <%= link_to "/triggers/add/" + params[:uri] + "/events/onHumanEnter", {"data-role"=>"button", "data-theme" =>"e", "class" => "ui-btn uibtn-corner-all ui-shadow ui-btn-up-e", "data-ajax"=> "false"} do %>
+        <span class='ui-btn-inner ui-btn-corner-all'><span class='ui-btn-text'> Connect a Trigger </span></span>
+        <% end%>
+
+        </div>
+	<h2 style="text-align: center;"> Other events of this space: </h2>
+	<div data-role="controlgroup" >
+	<% @entity.events.each do |event| %>
+	     <% if event["name"] != 'onHumanEnter' %>
+	     <%= link_to event["name"], "/liveSynergy/" + params[:uri] + "/events/" + event["name"], {"data-role"=>"button", "data-theme" => "c"} %>
+	     <% end %>
+	<% end %>
+        </div>
+</ul>
+</div>
+
+</div>
+<p id="notice"><%= notice %></p>
+

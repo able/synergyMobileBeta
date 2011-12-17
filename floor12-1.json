@@ -1,0 +1,951 @@
+{ 
+    "name": "12492", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "5,1,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12491", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "5,2,12",
+    "livePulseID": "",
+    "ownership": "public"
+
+},
+{ 
+    "name": "12490", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "5,3,12",
+    "livePulseID": "",
+    "ownership": "public"
+
+},
+{ 
+    "name": "12489", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "5,4,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12488", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "5,5,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12487", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "5,6,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12486", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "6,1,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12485", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "6,2,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12484", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "6,3,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12483", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "6,4,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12482", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "6,5,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12481", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "6,6,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12477", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "8,2,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12470", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "8,3,12",
+    "livePulseID": "",
+    "ownership": "public"
+
+},
+{ 
+    "name": "12468", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "8,4,12",
+    "livePulseID": "",
+    "ownership": "public"
+
+},
+{ 
+    "name": "12466", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "8,5,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12461", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "8,6,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12457", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "9,2,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12453", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "9,3,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12452", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "9,4,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12451", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "9,5,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12450", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "9,6,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12449", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "11,1,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12448", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "11,2,12",
+    "livePulseID": "",
+    "ownership": "public"
+
+},
+{ 
+    "name": "12447", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "11,3,12",
+    "livePulseID": "",
+    "ownership": "public"
+
+},
+{ 
+    "name": "12446", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "11,4,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12445", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "11,5,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12444", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "11,6,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12443", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "12,1,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12442", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "12,2,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12441", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "12,3,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12440", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "12,4,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12439", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "12,5,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12438", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "12,6,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12437", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "14,2,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12436", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "14,3,12",
+    "livePulseID": "",
+    "ownership": "public"
+
+},
+{ 
+    "name": "12435", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "14,4,12",
+    "livePulseID": "",
+    "ownership": "public"
+
+},
+{ 
+    "name": "12434", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "14,5,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12433", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "14,6,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12432", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "15,2,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12431", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "15,3,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12430", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "15,4,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12429", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "15,5,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12428", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "15,6,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12427", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,1,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12426", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,2,12",
+    "livePulseID": "",
+    "ownership": "public"
+
+},
+{ 
+    "name": "12425", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,3,12",
+    "livePulseID": "",
+    "ownership": "public"
+
+},
+{ 
+    "name": "12424", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,4,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12423", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,5,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12422", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,6,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12493", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "18,1,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12494", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "18,2,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12495", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "18,3,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12417", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,8,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12418", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "18,8,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12413", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,10,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12414", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "18,10,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12415", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "19,10,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12416", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "20,10,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12409", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,10,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12410", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "18,10,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12411", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "19,10,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12412", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "20,10,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12405", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,12,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12406", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "18,12,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12407", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "19,12,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12408", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "20,12,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12402", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,13,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12403", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "18,13,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12404", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "19,13,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12354", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,15,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12355", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "18,15,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12356", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "19,15,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12357", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "20,15,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12350", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,16,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12351", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "18,16,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12352", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "19,16,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12353", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "20,16,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12346", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,18,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12347", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "18,18,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12348", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "19,18,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12349", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "20,18,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12343", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,19,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12344", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "18,19,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12345", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "19,19,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+
+{ 
+    "name": "12339", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "17,21,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12340", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "18,21,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12341", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "19,21,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12342", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "20,21,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+
+{ 
+    "name": "12332", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "15,24,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12333", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "15,25,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12334", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "15,26,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12329", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "14,24,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12330", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "14,25,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12331", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "14,26,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+
+{ 
+    "name": "12325", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "12,24,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12326", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "12,25,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12327", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "12,26,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12328", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "12,27,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12321", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "11,24,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12322", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "11,25,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12323", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "11,26,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12324", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "11,27,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12318", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "9,24,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12319", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "9,25,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12320", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "9,26,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12315", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "8,24,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12316", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "8,25,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12317", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "8,26,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+
+{ 
+    "name": "12311", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "6,24,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12312", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "6,25,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12313", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "6,26,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12314", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "6,27,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12307", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "5,24,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12308", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "5,25,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12309", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "5,26,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+{ 
+    "name": "12310", 
+    "type": "space",
+    "subtype": "cubicle",
+    "coordinates": "5,27,12",
+    "livePulseID": "",
+    "ownership": "public"
+},
+

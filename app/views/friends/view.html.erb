@@ -1,0 +1,20 @@
+
+<div data-role="page">
+
+<div data-role="header">
+  <h1>Synergy Friend</h1>
+  <%= link_to 'Back', '#', {"class" => "ui-btn-left", "data-rel"=>"back", "data-icon"=>"arrow-l"} %>
+  <%= link_to 'Home', home_menu_path, "data-role" => "button", "data-icon" => "home", "class" => "ui-btn-right", "id" => "add-button" %>
+  <!-- # add javascript here to pull up dialog.... -->
+</div>
+
+<div data-role="content">
+
+	<h2 style="text-align: center;"> Name </h2> <p style="text-align: center;"> <%= @friend.name %></p>
+
+	<h2 style="text-align: center;"> Uri </h2> <p style="text-align: center;"> <%= @friend.uri %></p>
+
+</div>
+
+</div>
+

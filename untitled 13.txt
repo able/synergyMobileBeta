@@ -1,0 +1,36 @@
+$('select#triggered_entity').change( function() {
+	$.ajax({
+	  type: 'POST',
+	  dataType: 'json',
+	  url: '/entities/update_form_add_new_trigger',
+	  data: {'url': $(this).val()},
+	  success: (function(data) {
+		var methods = data.methods;
+		var options = '<option value="">Select An Event</option>';
+		for (var i = 0; i < methods.length; i++) {
+		  options += '<option value="' + methods[i].name + '">' + methods[i].name + '</option>';
+		}			
+		$("select#triggered_event").html(options).show().page();
+		
+		$('select#triggered_event').change( function() { 
+			var event_name = $(this).attr('value');
+			for (var i = 0; i < methods.length; i++) {
+				if (methods[i].name == event_name){
+					var args = methods[i].args;
+					var argStr = "";
+					for (var j = 0; j < args.length; j++) {
+						argStr += "<span>" + 'Argument ' + (j+1) + ": " + args[j].name + " (type: " +  args[j].type + ")"+ "</span>";
+						argStr += "<br>";
+						argStr += "<input type='text' class='args' " + "id=A-'" + j + "'>";
+						argStr += "<br>";
+						arg2Array.push("A-" + j);
+					}
+					$("div#args2").html(argStr).show().page();
+				}	
+			}
+
+		});
+
+		})
+	});
+});

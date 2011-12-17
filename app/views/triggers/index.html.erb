@@ -1,0 +1,21 @@
+<div data-role="page">
+<div data-role="header">
+  <h1>Trigger</h1>
+  <%= link_to 'Home', home_menu_path, "data-role" => "button", "data-icon" => "home", "class" => "ui-btn-left" %>
+  <%= link_to 'Add', triggers_add_path, "data-role" => "button", "data-icon" => "plus", "class" => "ui-btn-right", "data-ajax" => "false" %>
+</div>
+<div data-role="content">
+  <ul data-role="listview">
+    <% if @triggers.empty? %>
+    <h1> Please add a trigger. </h1>
+    <% else %>
+      <% @triggers.each do |trigger| %>
+        <li>
+          <%= link_to trigger.name, '/triggers/show/' + trigger['_id'].to_s %>
+          <%= link_to 'Delete', '/triggers/delete/' + trigger['_id'].to_s, "data-icon" => "minus", "data-ajax" => "false" %>
+        </li>
+      <% end %>
+    <% end %>
+</ul>
+</div>
+</div>                  

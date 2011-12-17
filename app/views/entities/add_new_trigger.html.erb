@@ -1,0 +1,82 @@
+<div data-role="page" id="mainpage" data-theme='a'>
+
+<div data-role="header">
+  <h1>Add New Trigger</h1>
+    <%= link_to 'Home', home_menu_path, {"class" => "ui-btn-left",  "data-icon"=>"home"} %>
+</div>
+
+<div data-role="content">
+ <%= render 'shared/trigger_error_messages', :target => @trigger %>
+
+ <%= form_for(:trigger) do |f| %>
+	<h2 style="text-align: center;"> title: </h2> 
+	<%= f.text_field :title %>
+
+	<h2 style="text-align: center;"> when: </h2> 
+        <%= f.select :triggering_entity, options_for_select(@entities, '0'), {:id => 'triggering_entity'}%> 
+
+	<h2 style="text-align: center;"> does this: </h2> 
+	<%= f.select :triggering, options_for_select([].insert(0, ["Select","0"]), '0'), {:id => 'triggering'} %> 
+	
+	<div id="args1"></div>
+
+        <h2 style="text-align: center;"> make this: </h2> 
+        <%= f.select :triggered_entity, options_for_select(@entities, '0'), {:id => 'triggered_entity'}%> 
+
+	<h2 style="text-align: center;"> do this: </h2> 
+	<%= f.select :triggered, options_for_select([].insert(0, ["Select","0"]), '0'), {:id => 'triggered'} %> 
+	
+	<div id="args2"></div>
+
+        <h2 style="text-align: center;"> description </h2> 
+  	<%= f.text_area :description, {:id => 'description'} %>
+
+	<h2 style="text-align: center;"> and when you are ready: </h2> 
+        <div class="actions">
+           <%= f.submit "Create Trigger!", {'data-ajax' => false, 'data-theme' => 'e'} %>
+        </div>
+ <% end %>
+</div>
+</div>
+<script type="text/javascript">
+    $('#mainpage').live('pagecreate',function(event){
+	$('select#trigger_triggering_entity').change( function() {
+	    $.ajax({
+	        type: 'POST',
+		dataType: 'json',
+		url: '/entities/update_form_add_new_trigger',
+	        data: {'url': $(this).val()},
+		success: (function(data) {
+		    var events = data.events;
+		    var options = '<option value="">Select An Event</option>';
+		    for (var i = 0; i < events.length; i++) {
+			options += '<option data-type="event" value="' + events[i].name + '">' + events[i].name + '</option>';
+		    }		
+                    var methods = data.methods;
+                
+                    for (var i = 0; i < methods.length; i++) {
+			options += '<option data-type="method" value="' + methods[i].name + '">' + methods[i].name + '</option>';
+                    }       
+	
+		    $('select#trigger_triggering').html(options).trigger('refresh');
+		    $('select#trigger_triggering').change( function() { 
+		        var name = $(this).attr('value');
+			var argStr;
+			switch(name){
+			    case 'onHumanEnter':
+				argStr = '<%= f.select :user, options_for_select(@friends, '0')%>';
+			        break;
+			    case 'onHumanExit':
+				argStr = '<%= f.select :user, options_for_select(@friends, '0')%>';
+	 	                break;
+			    case 'send':
+				argStr = '<%= f.select :user, options_for_select(@friends, '0')%>';
+				break;
+			} 
+			$("div#args1").html(argStr).trigger('create');
+		    });	
+		})
+	    });
+	});
+   });
+</script>

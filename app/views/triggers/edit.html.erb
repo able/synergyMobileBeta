@@ -1,0 +1,380 @@
+<div data-role="page" id="mainpage">
+
+<div data-role="header">
+  <h1>Add New Trigger</h1>
+  <%= link_to 'Back', '#', {"class" => "ui-btn-left", "data-rel"=>"back", "data-icon"=>"arrow-l"} %>
+</div>
+
+<div data-role="content">
+<div id='form'>
+ <p>
+   Title:<br />
+   <%= text_field_tag "title", @trigger['name'], {:id => 'title'} %>
+ </p>
+ <p>
+   Triggering Entity: <br />
+   <%= select_tag "triggering_entity", options_for_select(@entities_arr, @trigger['triggering_entity'])%>
+ </p>
+ <p>
+   Triggering Event: <br />
+   <%= select_tag "triggering_event", options_for_select([]) %>
+
+ </p>
+<div class="field" id="args1"></div>
+ <p>
+   Triggered Entity: <br />
+   <%= select_tag "triggered_entity", options_for_select(@entities_arr, @trigger['triggered_entity']) %>
+ </p>
+ <p>
+   Triggered Method: <br />
+   <%= select_tag "triggered_method", options_for_select([]) %>
+ </p>
+<div class="field" id="args2"></div>
+ <p>
+   Description:<br />
+   <%= text_area_tag "description", @trigger['description'], :id => 'desc' %>
+ </p>
+ <p>
+   <%= submit_tag 'Submit', :id => 'submit' %>
+ </p>
+</div>
+</div>
+
+</div>
+
+<div data-role="page" id="dialog" data-url="/demos/1.0b1/docs/pages/dialog.html" class="ui-dialog ui-page ui-body-a ui-page-active" role="dialog" style="min-height: 326px; ">
+	
+<div data-role="header" data-theme="d" data-position="inline" class="ui-corner-top ui-overlay-shadow ui-bar-d ui-header" role="banner">
+	
+<a href="#" id="back" data-icon="delete" data-iconpos="notext" class="ui-btn-left ui-btn ui-btn-up-d ui-btn-icon-notext ui-btn-corner-all ui-shadow" title="Close" data-theme="d"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Close</span><span class="ui-icon ui-icon-delete ui-icon-shadow"></span></span></a>
+			<h1 class="ui-title" tabindex="0" role="heading" aria-level="1">Dialog</h1>
+
+</div>
+
+<div data-role="content" data-theme="c" class="ui-content ui-body-c ui-corner-bottom ui-overlay-shadow" role="main">
+			<h1>Trigger Added.</h1>
+			<p></p>     
+			
+			
+			<%= link_to "#", {"data-role"=>"button","data-theme"=>"e","class"=>"ui-btn ui-btn-corner-all ui-shadow ui-btn-down-e ui-btn-up-e", "id"=>"home_menu"} do %>
+			<span class='ui-btn-inner ui-btn-corner-all'><span class='ui-btn-text'>Back to Main Menu</span></span>
+			<% end %> 
+</div>
+
+</div>
+
+<script>	 
+	 // Global declarations - assignments made in $(document).ready() below
+	var dialog = null;
+	var form = null;
+    var eventsAndMethodsOne = null;
+    var eventsAndMethodsTwo = null;
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+        $.ajax({
+          type: 'POST',
+          dataType: 'json',
+          url: '/entities/update_form_add_new_trigger',
+          data: {'url': $('select#triggering_entity').val()},
+          success: (function(data) {
+            var events = data.events;
+            var options = '';
+            for (var i = 0; i < events.length; i++) {
+              if ( events[i].name == '<%= @triggering %>') {
+                options += '<option data-type="event" selected="selected" value="' + events[i].name + '">' + events[i].name + '</option>';
+              }
+              else {
+                options += '<option data-type="event" value="' + events[i].name + '">' + events[i].name + '</option>';
+              }
+            }		
+            var methods = data.methods;
+            for (var i = 0; i < methods.length; i++) {
+              if ( methods[i].name == '<%= @triggering %>') {
+                options += '<option data-type="method" selected="selected" value="' + methods[i].name + '">' + methods[i].name + '</option>';
+              }
+              else {
+                options += '<option data-type="method" value="' + methods[i].name + '">' + methods[i].name + '</option>';
+              }
+            }       
+            $("select#triggering_event").html(options).show().page().selectmenu('refresh', true);
+
+            var name = '<%= @triggering %>';
+            var eventsAndMethods = events.concat(methods);
+            for (var i = 0; i < eventsAndMethods.length; i++) {
+                if (eventsAndMethods[i].name == name){
+                    alert('sup');
+                    console.log(eventsAndMethods[i].toString());
+                    var args = eventsAndMethods[i].args;
+                    var argStr = "";
+                    alert(args);
+                    for (var j = 0; j < args.length; j++) {
+                        argStr += "<span>" + 'Argument ' + (j+1) + ": " + args[j].name + " (type: " +  args[j].type + ")"+ "</span>";
+                        argStr += "<br>";
+                        argStr += "<input type='text' class='args' " + "id=A-" + j + ">";
+                        argStr += "<br>";
+                        arg1Array.push("A-" + j);
+                        alert('supbro');
+                    }
+                    $("#args1").html(argStr).show().page();
+                    alert('hi');
+                    $("#args1").page(); 
+                }	
+            } 
+
+			})
+
+		});
+			$.ajax({
+			  type: 'POST',
+			  dataType: 'json',
+			  url: '/entities/update_form_add_new_trigger',
+			  data: {'url': $('select#triggered_entity').val()},
+			  success: (function(data) {
+				var events = data.events;
+				var options = '';
+            for (var i = 0; i < events.length; i++) {
+              if ( events[i].name == '<%= @triggered %>') {
+                options += '<option data-type="event" selected="selected" value="' + events[i].name + '">' + events[i].name + '</option>';
+              }
+              else {
+                options += '<option data-type="event" value="' + events[i].name + '">' + events[i].name + '</option>';
+              }
+            }		
+            var methods = data.methods;
+            for (var i = 0; i < methods.length; i++) {
+              if ( methods[i].name == '<%= @triggered %>') {
+                options += '<option data-type="method" selected="selected" value="' + methods[i].name + '">' + methods[i].name + '</option>';
+              }
+              else {
+                options += '<option data-type="method" value="' + methods[i].name + '">' + methods[i].name + '</option>';
+              }
+            }       
+				
+				// alert(options);
+				$("#triggered_method").html(options).show().page().selectmenu('refresh', true);
+                    var name = '<%= @triggered %>';
+                    var eventsAndMethods = events.concat(methods);
+                    for (var i = 0; i < eventsAndMethods.length; i++) {
+						if (eventsAndMethods[i].name == name){
+							var args = eventsAndMethods[i].args;
+							var argStr = "";
+							for (var j = 0; j < args.length; j++) {
+								argStr += "<span>" + 'Argument ' + (j+1) + ": " + args[j].name + " (type: " +  args[j].type + ")"+ "</span>";
+								argStr += "<br>";
+								argStr += "<input type='text' class='args' " + "id=B-" + j + ">";
+								argStr += "<br>";
+								arg1Array.push("B-" + j);
+							}
+							$("div#args2").html(argStr).show().page();
+						}	
+					}
+
+				})
+			});
+
+		
+		
+		
+		dialog = $('#dialog');
+		form = $('#form');
+		
+		function hideDialog(){
+			dialog.hide();
+		}
+
+		function hideForm(){
+			form.hide();
+		}  
+
+		function showForm(){
+			form.show();
+		} 
+
+		function showDialog(){
+			dialog.show();
+		}
+		
+		hideDialog();
+
+
+		// $('#triggering_entity').live('change', function() {
+		var paramsArray = new Array();
+		var arg1Array = new Array();
+		var arg2Array = new Array();
+		var post = {};
+		
+		// paramsArray.push('title');
+		paramsArray.push('triggering_entity');
+		paramsArray.push('triggering_event');
+		paramsArray.push('triggered_entity');
+		paramsArray.push('triggered_method');
+		
+		$("#submit").click( function(){
+			var item;
+			var val;
+			
+            item = 'triggering_entity';
+			val = $('#' + item + ' option:selected').val(); 
+			post[item] = val;
+            
+            item = 'triggered_entity';
+			val = $('#' + item + ' option:selected').val(); 
+			post[item] = val;
+
+			post['name'] = $('#title').val(); 
+			post['description'] = $('#desc').val(); 
+			
+			var args1 = new Array();
+			var args2 = new Array();
+			
+			for (var i = 0; i < arg1Array.length; i++) {
+				item = arg1Array[i];
+				val = $('#' + item).val(); 
+				args1.push(val);
+			}
+			
+			for (var i = 0; i < arg2Array.length; i++) {
+				item = arg2Array[i];
+				val = $('#' + item).val(); 
+				args2.push(val);
+			}
+        
+            var triggering = {};
+            var triggered = {};
+		
+            item = 'triggering_event';
+			val = $('#' + item + ' option:selected').val(); 
+			triggering['name'] = val;
+            triggering['type'] = $('#' + item + ' option:selected').attr('data-type');    
+            triggering['args'] = args1.toString();        
+
+            item = 'triggered_method';
+			val = $('#' + item + ' option:selected').val(); 
+			triggered['name'] = val;
+            triggered['type'] = $('#' + item + ' option:selected').attr('data-type');    
+            triggered['args'] = args2.toString();    
+            
+            post['triggering'] = triggering;
+            post['triggered'] = triggered;           
+	
+			$.ajax({
+			  type: 'POST',
+			  url: '/triggers/edit/' + '<%= @id %>',
+			  data: post,
+			  success: (function() { 
+				hideForm();
+				showDialog();
+				}),
+			});
+			
+		});
+		
+		
+		$('select#triggering_entity').change( function() {
+			$.ajax({
+			  type: 'POST',
+			  dataType: 'json',
+			  url: '/entities/update_form_add_new_trigger',
+			  data: {'url': $(this).val()},
+			  success: (function(data) {
+				var events = data.events;
+				var options = '<option value="">Select An Event</option>';
+				for (var i = 0; i < events.length; i++) {
+				  options += '<option data-type="event" value="' + events[i].name + '">' + events[i].name + '</option>';
+				}		
+                var methods = data.methods;
+                for (var i = 0; i < methods.length; i++) {
+                  options += '<option data-type="method" value="' + methods[i].name + '">' + methods[i].name + '</option>';
+                }       
+	
+				$("select#triggering_event").html(options).show().page();
+				$('select#triggering_event').change( function() { 
+					var name = $(this).attr('value');
+					
+                    var eventsAndMethods = events.concat(methods);
+                    for (var i = 0; i < eventsAndMethods.length; i++) {
+						if (eventsAndMethods[i].name == name){
+							var args = eventsAndMethods[i].args;
+							var argStr = "";
+							for (var j = 0; j < args.length; j++) {
+								argStr += "<span>" + 'Argument ' + (j+1) + ": " + args[j].name + " (type: " +  args[j].type + ")"+ "</span>";
+								argStr += "<br>";
+								argStr += "<input type='text' class='args' " + "id=A-" + j + ">";
+								argStr += "<br>";
+								arg1Array.push("A-" + j);
+							}
+							$("div#args1").html(argStr).show().page();
+						}	
+					}
+
+				});
+
+				})
+			});
+		});
+		
+		$('select#triggered_entity').change( function() {
+			$.ajax({
+			  type: 'POST',
+			  dataType: 'json',
+			  url: '/entities/update_form_add_new_trigger',
+			  data: {'url': $(this).val()},
+			  success: (function(data) {
+				var events = data.events;
+				var options = '<option value="">Select An Event</option>';
+				for (var i = 0; i < events.length; i++) {
+				  options += '<option data-type="event" value="' + events[i].name + '">' + events[i].name + '</option>';
+				}		
+                var methods = data.methods;
+                for (var i = 0; i < methods.length; i++) {
+                  options += '<option data-type="method" value="' + methods[i].name + '">' + methods[i].name + '</option>';
+                }       
+				
+				// alert(options);
+				$("#triggered_method").html(options).show().page();
+
+				
+                $('select#triggered_method').change( function() { 
+					var name = $(this).attr('value');
+					
+                    var eventsAndMethods = events.concat(methods);
+                    for (var i = 0; i < eventsAndMethods.length; i++) {
+						if (eventsAndMethods[i].name == name){
+							var args = eventsAndMethods[i].args;
+							var argStr = "";
+							for (var j = 0; j < args.length; j++) {
+								argStr += "<span>" + 'Argument ' + (j+1) + ": " + args[j].name + " (type: " +  args[j].type + ")"+ "</span>";
+								argStr += "<br>";
+								argStr += "<input type='text' class='args' " + "id=B-" + j + ">";
+								argStr += "<br>";
+								arg1Array.push("B-" + j);
+							}
+							$("div#args2").html(argStr).show().page();
+						}	
+					}
+
+				});
+
+			})
+		});
+	 });	
+		$('#home_menu').click(function() {
+			window.location = '/home/menu';
+			
+		});
+
+		$('#back').click(function() {
+			location.reload();
+		});
+
+		
+
+
+		
+	});
+	
+	
+
+</script>
